@@ -40,3 +40,16 @@ amounttwo = holdertwo * chicken.grams
 print("%.3f" % amountone, " - this is the amount of grams for salad")
 print("%.3f" % amounttwo, " - this is the amount of grams for chicken")
 # this works out how much calories is needed for two foods.
+
+'''
+recursion:
+def stars(output):
+    if len(output) < 990:
+        print(output)
+        output = stars(output+"*")
+    else:
+        print(output)
+    return output
+    
+stars("*")
+'''
