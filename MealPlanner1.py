@@ -26,12 +26,14 @@ saladR = salad.calories / salad.protein
 # creating ratio for the salad for calories to  protein
 chickR = chicken.calories / chicken.protein
 # creating ratio for the chicken for calories to protein
-Co = user.protein - 1
+Co = user.protein
 # setting the counts to go through all the possibilities
-Ct = 1
+Ct = 0
 
 
 while True :
+    Co -= 1
+    Ct += 1
     x = Co * saladR # counts multiplied by ratios to find calorie amount
     y = Ct * chickR
     total = x + y
@@ -44,9 +46,14 @@ while True :
         print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
         break
     else :
-        # incrementing and decrementing the counts to find the amount needed
-        Co -= 1
-        Ct += 1
+        if total > user.calories :
+            H = total - user.calories
+            o = (Co + 1) * saladR
+            u = (Ct - 1) * chickR
+            P = o + u
+            Yy = P - user.calories
+
+
     # elif total < user.calories
         # need to work out how to find the best approximation
         # compare the totals with each other, so modify the counts to the previous one and the one after to compare it
