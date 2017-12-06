@@ -46,13 +46,33 @@ while True :
         print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
         break
     else :
-        if total > user.calories :
-            H = total - user.calories
-            o = (Co + 1) * saladR
-            u = (Ct - 1) * chickR
-            P = o + u
-            Yy = P - user.calories
-
+        if total - user.calories > 0 :
+            H = Co - 1
+            T = Ct + 1
+            if ((H * saladR) + (T * chickR)) - user.calories < total - user.calories :
+                continue
+            else :
+                Sfo = H / salad.protein
+                Sft = T / chicken.protein
+                A = Sfo * salad.grams
+                B = Sft * chicken.grams
+                print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
+                print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
+                break
+        else :
+            H = Co - 1
+            T = Ct + 1
+            temp = user.calories - total
+            if temp > ((H * saladR) + (T * chickR)) - user.calories :
+                continue
+            else :
+                Sfo = H / salad.protein
+                Sft = T / chicken.protein
+                A = Sfo * salad.grams
+                B = Sft * chicken.grams
+                print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
+                print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
+                break
 
     # elif total < user.calories
         # need to work out how to find the best approximation
