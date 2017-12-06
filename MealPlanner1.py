@@ -39,7 +39,7 @@ def repeat(inputo,inputt) :
 while True :
     Co -= 1
     Ct += 1
-    H = Co - 1
+    H = Co - 1 # this is the one after going through the list of possiblities
     T = Ct + 1
     x = Co * saladR # counts multiplied by ratios to find calorie amount
     y = Ct * chickR
@@ -72,5 +72,3 @@ while True :
         # introduce more foods first, then find a way of introducing loads of foods, still using protein and Kal
         # then introduce ways of working out with carbs and fat also
         # then when you can do that, move on to the next stage of creating meals - lunch, breakfast, etc
-
-print("check")
