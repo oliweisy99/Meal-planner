@@ -30,52 +30,41 @@ Co = user.protein
 # setting the counts to go through all the possibilities
 Ct = 0
 
+def repeat(inputo,inputt) :
+    A = (inputo / salad.protein) * salad.grams
+    B = (inputt / chicken.protein) * chicken.grams
+    print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
+    print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
 
 while True :
     Co -= 1
     Ct += 1
+    H = Co - 1
+    T = Ct + 1
     x = Co * saladR # counts multiplied by ratios to find calorie amount
     y = Ct * chickR
     total = x + y
+    sum = ((H * saladR) + (T * chickR)) - user.calories
+    Tmu = total - user.calories
     if total == user.calories : # if total is equal to the required calorie amount
-        Sfo = Co / salad.protein # working out the scale factors to multiply all food details by
-        Sft = Ct / chicken.protein
-        A = Sfo * salad.grams
-        B = Sft * chicken.grams
-        print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
-        print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
+        repeat(Co, Ct)
         break
     else :
-        if total - user.calories > 0 :
-            H = Co - 1
-            T = Ct + 1
-            if ((H * saladR) + (T * chickR)) - user.calories < total - user.calories :
+        if Tmu > 0 :
+            if sum < Tmu :
                 continue
             else :
-                Sfo = H / salad.protein
-                Sft = T / chicken.protein
-                A = Sfo * salad.grams
-                B = Sft * chicken.grams
-                print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
-                print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
+                repeat(H, T)
                 break
         else :
-            H = Co - 1
-            T = Ct + 1
             temp = user.calories - total
-            if temp > ((H * saladR) + (T * chickR)) - user.calories :
+            if temp > sum :
                 continue
             else :
-                Sfo = H / salad.protein
-                Sft = T / chicken.protein
-                A = Sfo * salad.grams
-                B = Sft * chicken.grams
-                print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
-                print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
+                repeat(H, T)
                 break
 
-    # elif total < user.calories
-        # need to work out how to find the best approximation
+
         # compare the totals with each other, so modify the counts to the previous one and the one after to compare it
         # maybe also find a way of jumping the count to speed up the efficiency so it doesnt have to go through every
         # possibility, this will make it easier when there are more foods to deal with...
