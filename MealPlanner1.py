@@ -1,43 +1,64 @@
 
+
+'''
 class user():
     calories = float(input("Whats your calories requirements?"))
     protein = float(input("Whats your protein requirements?"))
+'''
 
-class chicken():
-    grams = 100
-    calories = 150
-    protein = 10
+class chicken:
+    def __init__(self):
+        self.grams = 100
+        self.calories = 150
+        self.protein = 30
+        self.fat = 15
+        self.carbs = 20
 
-class salad():
-    grams = 100
-    calories = 75
-    protein = 15
+class steak:
+    def __init__(self):
+        self.grams = 100
+        self.calories = 125
+        self.protein = 35
+        self.fat = 20
+        self.carbs = 25
 
-user()
 
-saladR = salad.calories / salad.protein
-chickR = chicken.calories / chicken.protein
-Co = user.protein
-Ct = 0
-"""
-creates ratios and counts
-"""
+class salad:
+    def __init__(self):
+        self.grams = 100
+        self.calories = 110
+        self.protein = 5
+        self.fat = 5
+        self.carbs = 20
 
-uc = user.calories
-total = Co * saladR
-if total < uc :
-    need = uc - total
-else : 
-    need = total - uc
-stepV = chickR - saladR
-if stepV < 0 :
-    stepV = stepV * -1
-minA = need // stepV
-A = ((Co - minA) / salad.protein) * 100
-B = ((Ct + minA) /  chicken.protein) * 100
-print("you need ", "%.2f" % A, " grams of salad to meet your needs ")
-print("you need ", "%.2f" % B, " grams of Chicken to meet your needs ")
+testOne = 50
+testTwo = 100
+testThree = 150
+totalCal = 0
+totalPro = 0
+totalCarb = 0
+totalFat = 0
+
+one = 0.1
+two = 0.1
+three = 0.1
+for z in range(0,20):
+    for y in range(0,20):
+        for x in range(0,20):
+            print("%.1f" % one, "%.1f" % two, "%.1f" % three)
+
+            three = three + 0.1
+            if three > 2.1:
+                two = two + 0.1
+                three = three - 2.0
+            if two > 2.1 :
+                one = one + 0.1
+                two = two - 2.0
 
 '''
-works out need for two foods for calorie and protein 
+ok lets start with practise values. then we can make the calculation
+next part is to work out the difference between the requirements and the calculation
+then to be able to add them to an array and insertion sort it in order so the smallest difference is at the top
+then after you have it working, make it so it works with any amounts of foods and any details
+then make it more efficent - multi threaded programming
 '''
