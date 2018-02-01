@@ -1,10 +1,14 @@
-
+#nom.com
+#naughty
+#ominpresent
+#meals
 
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
 
+'''
 index = 2
 count = 1
 myArray = [0, 1, 2, 3, 4, 5]
@@ -26,7 +30,7 @@ for index in range(index, len(myArray)):
 # move along the array if the number is smaller and ends the while loop of switching numberes
 
 print(myArray)
-
+'''
 
 class fish:
     def __init__(self):
@@ -95,8 +99,9 @@ for z in range(0,20):
                 two = two - 2.0
 
 '''
-- add to an array using insertion sort to get the closest value
+- add to an array using insertion sort to get the closest value and so you dont have to sort through all posibilites
 - make sure it works with multiple amounts of foods to create actual meals and make sure maths works 
 - make the code better: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
 '''
+
