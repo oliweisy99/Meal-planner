@@ -1,8 +1,32 @@
 
+
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
-userCarb = float(input("Whats your fat requirements?"))
-userFat = float(input("Whats your carb requirements?"))
+userCarb = float(input("Whats your carb requirements?"))
+userFat = float(input("Whats your fat requirements?"))
+
+index = 2
+count = 1
+myArray = [0, 1, 2, 3, 4, 5]
+
+for count in range(0,5):
+    item = int(input("what is your input?"))
+    myArray[count + 1] = item
+# takes input and stores input into array
+
+for index in range(index, len(myArray)):
+    insertItem = myArray[index]
+    currentitem = index - 1
+    while myArray[currentitem] > insertItem and currentitem > 0:
+        myArray[currentitem + 1] = myArray[currentitem]
+        currentitem = currentitem - 1
+    myArray[currentitem + 1] = insertItem
+# goes through each number in the array and loops until the number is smaller than the one in front
+# switches the number round if the count number is bigger than the number after it in the array
+# move along the array if the number is smaller and ends the while loop of switching numberes
+
+print(myArray)
+
 
 class fish:
     def __init__(self):
@@ -55,10 +79,13 @@ for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
             print("%.1f" % one, "%.1f" % two, "%.1f" % three)
-            print((one * steakCal) + (two * fishCal) + (three * potatoCal))
-            print((one * steakPro) + (two * fishPro) + (three * potatoPro))
-            print((one * steakCarbs) + (two * fishCarbs) + (three * potatoCarbs))
-            print((one * steakFat) + (two * fishFat) + (three * potatoFat))
+            # working out difference
+            calDif = userCal - ((one * steakCal) + (two * fishCal) + (three * potatoCal))
+            proDif = userPro - ((one * steakPro) + (two * fishPro) + (three * potatoPro))
+            carbDif = userCarb - ((one * steakCarbs) + (two * fishCarbs) + (three * potatoCarbs))
+            fatDif = userFat - ((one * steakFat) + (two * fishFat) + (three * potatoFat))
+            totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
+            print(totalDif)
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
@@ -70,11 +97,7 @@ for z in range(0,20):
 '''
 - work out the difference to find the closest one
 - add to an array using insertion sort
-- make sure it works with multiple amounts of foods and then make the code better
-lets start with creating 20 variables then we can make it so there are less. later.
+- make sure it works with multiple amounts of foods and then make the code better: 
+procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
 
-next part is to work out the difference between the requirements and the calculation
-then to be able to add them to an array and insertion sort it in order so the smallest difference is at the top
-then after you have it working, make it so it works with any amounts of foods and any details
-then make it more efficent - multi threaded programming
 '''
