@@ -29,9 +29,24 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
-steakMulti = userFat / steak().fat
-fishMulti = userPro / fish().protein
-potatoMulti = userCarb / potato().carbs
+steakMulti = userFat / steak().fat #4.6
+fishMulti = userPro / fish().protein #4.625
+potatoMulti = userCarb / potato().carbs #9.266667
+
+steakCal = steak().calories * steakMulti
+steakPro = steak().protein * steakMulti
+steakCarbs = steak().carbs * steakMulti
+steakFat = steak().fat * steakMulti
+
+fishCal = fish().calories * fishMulti
+fishPro = fish().protein * fishMulti
+fishCarbs = fish().carbs * fishMulti
+fishFat = fish().fat * fishMulti
+
+potatoCal = potato().calories * potatoMulti
+potatoPro = potato().protein * potatoMulti
+potatoCarbs = potato().carbs * potatoMulti
+potatoFat = potato().fat * potatoMulti
 
 one = 0.1
 two = 0.1
@@ -40,6 +55,10 @@ for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
             print("%.1f" % one, "%.1f" % two, "%.1f" % three)
+            print((one * steakCal) + (two * fishCal) + (three * potatoCal))
+            print((one * steakPro) + (two * fishPro) + (three * potatoPro))
+            print((one * steakCarbs) + (two * fishCarbs) + (three * potatoCarbs))
+            print((one * steakFat) + (two * fishFat) + (three * potatoFat))
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
