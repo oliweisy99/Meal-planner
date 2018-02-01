@@ -1,10 +1,10 @@
 
 
-'''
-class user():
-    calories = float(input("Whats your calories requirements?"))
-    protein = float(input("Whats your protein requirements?"))
-'''
+
+userCal = float(input("Whats your calories requirements?"))
+userPro = float(input("Whats your protein requirements?"))
+userCarb = float(input("Whats your fat requirements?"))
+userFat = float(input("Whats your carb requirements?"))
 
 class chicken:
     def __init__(self):
@@ -31,13 +31,7 @@ class salad:
         self.fat = 5
         self.carbs = 20
 
-testOne = 50
-testTwo = 100
-testThree = 150
-totalCal = 0
-totalPro = 0
-totalCarb = 0
-totalFat = 0
+
 
 one = 0.1
 two = 0.1
@@ -46,7 +40,6 @@ for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
             print("%.1f" % one, "%.1f" % two, "%.1f" % three)
-
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
