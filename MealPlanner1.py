@@ -68,7 +68,9 @@ for z in range(0,20):
                 two = two - 2.0
 
 '''
-ok lets start with practise values. then we can make the calculation
+- work out the difference to find the closest one
+- add to an array using insertion sort
+- make sure it works with multiple amounts of foods and then make the code better
 lets start with creating 20 variables then we can make it so there are less. later.
 
 next part is to work out the difference between the requirements and the calculation
