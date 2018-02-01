@@ -95,9 +95,8 @@ for z in range(0,20):
                 two = two - 2.0
 
 '''
-- work out the difference to find the closest one
-- add to an array using insertion sort
-- make sure it works with multiple amounts of foods and then make the code better: 
+- add to an array using insertion sort to get the closest value
+- make sure it works with multiple amounts of foods to create actual meals and make sure maths works 
+- make the code better: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
-
 '''
