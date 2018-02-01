@@ -1,37 +1,37 @@
 
-
-
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your fat requirements?"))
 userFat = float(input("Whats your carb requirements?"))
 
-class chicken:
+class fish:
     def __init__(self):
         self.grams = 100
-        self.calories = 150
-        self.protein = 30
-        self.fat = 15
+        self.calories = 125
+        self.protein = 40
+        self.fat = 10
         self.carbs = 20
 
 class steak:
     def __init__(self):
         self.grams = 100
-        self.calories = 125
+        self.calories = 150
         self.protein = 35
-        self.fat = 20
+        self.fat = 15
         self.carbs = 25
 
 
-class salad:
+class potato:
     def __init__(self):
         self.grams = 100
-        self.calories = 110
-        self.protein = 5
+        self.calories = 90
+        self.protein = 10
         self.fat = 5
-        self.carbs = 20
+        self.carbs = 30
 
-
+steakMulti = userFat / steak().fat
+fishMulti = userPro / fish().protein
+potatoMulti = userCarb / potato().carbs
 
 one = 0.1
 two = 0.1
@@ -50,6 +50,8 @@ for z in range(0,20):
 
 '''
 ok lets start with practise values. then we can make the calculation
+lets start with creating 20 variables then we can make it so there are less. later.
+
 next part is to work out the difference between the requirements and the calculation
 then to be able to add them to an array and insertion sort it in order so the smallest difference is at the top
 then after you have it working, make it so it works with any amounts of foods and any details
