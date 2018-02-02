@@ -18,6 +18,13 @@ for count in range(0,5):
     myArray[count + 1] = item
 # takes input and stores input into array
 
+when array is full, then start seeing if the totaldif is smaller than the first item of the array
+to check if array is full, the values in array are bigger than 0 as array starts with 'none' values
+use a boolean to check if all values are greater than 0, and if boolean is true, then it skips 
+the code of adding in and just moves to the comparison side 
+if totaldif value is not smaller than first value, then move on in the loop
+if it is, add it to the insertion sort to see if it moves up: using while loop
+
 for index in range(index, len(myArray)):
     insertItem = myArray[index]
     currentitem = index - 1
@@ -27,10 +34,11 @@ for index in range(index, len(myArray)):
     myArray[currentitem + 1] = insertItem
 # goes through each number in the array and loops until the number is smaller than the one in front
 # switches the number round if the count number is bigger than the number after it in the array
-# move along the array if the number is smaller and ends the while loop of switching numberes
+# move along the array if the number is smaller and ends the while loop of switching numbers
 
 print(myArray)
 '''
+
 
 class fish:
     def __init__(self):
@@ -79,6 +87,8 @@ potatoFat = potato().fat * potatoMulti
 one = 0.1
 two = 0.1
 three = 0.1
+orderArr = [0, 1000, 1000, 1000, 1000, 1000]
+
 for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
@@ -90,6 +100,20 @@ for z in range(0,20):
             fatDif = userFat - ((one * steakFat) + (two * fishFat) + (three * potatoFat))
             totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
             print(totalDif)
+            for index in range(1,6):
+                if orderArr[index] > totalDif :
+                    holder = orderArr[index]
+                    orderArr[index] = totalDif
+
+            index  = 0
+
+            '''
+            
+            works out if array has empty spaces
+            when array is full, it then starts comparing and adding in 
+            if it is smaller, then it will move up. 
+            if totaldif is smaller than the amount in the bottom of the array, then it starts moving it up
+            '''
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
