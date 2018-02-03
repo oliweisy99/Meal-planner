@@ -139,7 +139,11 @@ for index in range(0,6):
 '''
 - add to an array using insertion sort to get the closest value and so you dont have to sort through all posibilites
 - make sure it works with multiple amounts of foods to create actual meals and make sure maths works 
-- make the code better: 
+- make the code better and more accurate to get results faster: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
+
+once you have the code to generate the best variations, now you can start making meals best on requriements 
+then you can start adding features or start making it into a website 
+then you start adding more features and get the business side of it sorted
 '''
 
