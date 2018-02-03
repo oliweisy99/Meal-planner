@@ -25,6 +25,7 @@ the code of adding in and just moves to the comparison side
 if totaldif value is not smaller than first value, then move on in the loop
 if it is, add it to the insertion sort to see if it moves up: using while loop
 
+
 for index in range(index, len(myArray)):
     insertItem = myArray[index]
     currentitem = index - 1
@@ -87,33 +88,45 @@ potatoFat = potato().fat * potatoMulti
 one = 0.1
 two = 0.1
 three = 0.1
+holder = None
 orderArr = [0, 1000, 1000, 1000, 1000, 1000]
 
 for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
-            print("%.1f" % one, "%.1f" % two, "%.1f" % three)
+            # print("%.1f" % one, "%.1f" % two, "%.1f" % three)
             # working out difference
             calDif = userCal - ((one * steakCal) + (two * fishCal) + (three * potatoCal))
             proDif = userPro - ((one * steakPro) + (two * fishPro) + (three * potatoPro))
             carbDif = userCarb - ((one * steakCarbs) + (two * fishCarbs) + (three * potatoCarbs))
             fatDif = userFat - ((one * steakFat) + (two * fishFat) + (three * potatoFat))
             totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
-            print(totalDif)
-            for index in range(1,6):
-                if orderArr[index] > totalDif :
-                    holder = orderArr[index]
-                    orderArr[index] = totalDif
+            # print(totalDif)
 
-            index  = 0
-
-            '''
-            
-            works out if array has empty spaces
-            when array is full, it then starts comparing and adding in 
-            if it is smaller, then it will move up. 
-            if totaldif is smaller than the amount in the bottom of the array, then it starts moving it up
-            '''
+            if y == 0.1 and x < 6:
+                orderArr[x] = totalDif
+            if orderArr[0] > totalDif :
+                orderArr[0] = totalDif
+            if orderArr[1] > totalDif :
+                holder = orderArr[1]
+                orderArr[1] = totalDif
+                orderArr[0] = holder
+            if orderArr[2] > totalDif :
+                holder = orderArr[2]
+                orderArr[2] = totalDif
+                orderArr[1] = holder
+            if orderArr[3] > totalDif :
+                holder = orderArr[3]
+                orderArr[3] = totalDif
+                orderArr[2] = holder
+            if orderArr[4] > totalDif :
+                holder = orderArr[4]
+                orderArr[4] = totalDif
+                orderArr[3] = holder
+            if orderArr[5] > totalDif :
+                holder = orderArr[5]
+                orderArr[5] = totalDif
+                orderArr[4] = holder
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
@@ -121,7 +134,8 @@ for z in range(0,20):
             if two > 2.1 :
                 one = one + 0.1
                 two = two - 2.0
-
+for index in range(0,6):
+    print("%.2f" % orderArr[index])
 '''
 - add to an array using insertion sort to get the closest value and so you dont have to sort through all posibilites
 - make sure it works with multiple amounts of foods to create actual meals and make sure maths works 
