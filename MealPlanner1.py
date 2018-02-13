@@ -111,6 +111,7 @@ for z in range(0,20):
                     holder = orderArr[index]
                     orderArr[index] = totalDif
                     orderArr[index - 1] = holder
+            # sorting array thing
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
@@ -123,9 +124,11 @@ for index in range(0,6):
     print("%.2f" % orderArr[index])
 '''
 - add to an array using insertion sort to get the closest value and so you dont have to sort through all posibilites
-- make sure it works with multiple amounts of foods to create actual meals and make sure maths works 
+- make sure maths works with more than 3 foods
 - make the code better and more accurate to get results faster: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
+- make sure it works with multiple amounts of foods to create actual meals, so have lots of foods and 
+make 3 different meals based on the foods to get really close amounts. 
 
 once you have the code to generate the best variations, now you can start making meals best on requriements 
 then you can start adding features or start making it into a website 
