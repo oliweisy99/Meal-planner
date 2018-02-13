@@ -102,31 +102,15 @@ for z in range(0,20):
             fatDif = userFat - ((one * steakFat) + (two * fishFat) + (three * potatoFat))
             totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
             # print(totalDif)
-
             if y == 0.1 and x < 6:
                 orderArr[x] = totalDif
             if orderArr[0] > totalDif :
                 orderArr[0] = totalDif
-            if orderArr[1] > totalDif :
-                holder = orderArr[1]
-                orderArr[1] = totalDif
-                orderArr[0] = holder
-            if orderArr[2] > totalDif :
-                holder = orderArr[2]
-                orderArr[2] = totalDif
-                orderArr[1] = holder
-            if orderArr[3] > totalDif :
-                holder = orderArr[3]
-                orderArr[3] = totalDif
-                orderArr[2] = holder
-            if orderArr[4] > totalDif :
-                holder = orderArr[4]
-                orderArr[4] = totalDif
-                orderArr[3] = holder
-            if orderArr[5] > totalDif :
-                holder = orderArr[5]
-                orderArr[5] = totalDif
-                orderArr[4] = holder
+            for index in range(1,6):
+                if orderArr[index] > totalDif:
+                    holder = orderArr[index]
+                    orderArr[index] = totalDif
+                    orderArr[index - 1] = holder
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
@@ -134,6 +118,7 @@ for z in range(0,20):
             if two > 2.1 :
                 one = one + 0.1
                 two = two - 2.0
+
 for index in range(0,6):
     print("%.2f" % orderArr[index])
 '''
