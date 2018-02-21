@@ -1,44 +1,7 @@
-#nom.com
-#naughty
-#ominpresent
-#meals
-
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
-
-'''
-index = 2
-count = 1
-myArray = [0, 1, 2, 3, 4, 5]
-
-for count in range(0,5):
-    item = int(input("what is your input?"))
-    myArray[count + 1] = item
-# takes input and stores input into array
-
-when array is full, then start seeing if the totaldif is smaller than the first item of the array
-to check if array is full, the values in array are bigger than 0 as array starts with 'none' values
-use a boolean to check if all values are greater than 0, and if boolean is true, then it skips 
-the code of adding in and just moves to the comparison side 
-if totaldif value is not smaller than first value, then move on in the loop
-if it is, add it to the insertion sort to see if it moves up: using while loop
-
-
-for index in range(index, len(myArray)):
-    insertItem = myArray[index]
-    currentitem = index - 1
-    while myArray[currentitem] > insertItem and currentitem > 0:
-        myArray[currentitem + 1] = myArray[currentitem]
-        currentitem = currentitem - 1
-    myArray[currentitem + 1] = insertItem
-# goes through each number in the array and loops until the number is smaller than the one in front
-# switches the number round if the count number is bigger than the number after it in the array
-# move along the array if the number is smaller and ends the while loop of switching numbers
-
-print(myArray)
-'''
 
 
 class fish:
@@ -84,6 +47,15 @@ potatoCal = potato().calories * potatoMulti
 potatoPro = potato().protein * potatoMulti
 potatoCarbs = potato().carbs * potatoMulti
 potatoFat = potato().fat * potatoMulti
+
+class number:
+    def __init__(self):
+        self.one = 0
+        self.two = 0
+        self.three = 0
+
+myList = [number() for index in range(0,5)]
+
 
 one = 0.1
 two = 0.1
