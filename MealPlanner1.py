@@ -48,6 +48,11 @@ potatoPro = potato().protein * potatoMulti
 potatoCarbs = potato().carbs * potatoMulti
 potatoFat = potato().fat * potatoMulti
 
+'''
+sort this out to work with multiple foods
+'''
+
+
 class number:
     def __init__(self):
         self.on = 0
@@ -105,7 +110,6 @@ for index in range(1,6):
     print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
 
 '''
-- add to an array using insertion sort to get the closest value and so you dont have to sort through all posibilites
 - make sure maths works with more than 3 foods
 - make the code better and more accurate to get results faster: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
@@ -116,7 +120,7 @@ start making good meals based on variations and categories etc so all is needed 
 different meals - sandwiches, salads, meat meals, cereals etc.
 once you have the code to generate the best variations, now you can start making meals best on requirements such as 
 price, needs, aims and start adding in foods from websites to get it done. 
-then you can start adding more features or start making it into a website 
-then you start getting the business side of it sorted so it can be shopped, made and delivered
+then you can start adding more features whilst making it into a website 
+then you start getting the business side of it sorted so meals can be shopped, made and delivered
 '''
 
