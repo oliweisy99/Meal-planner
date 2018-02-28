@@ -50,55 +50,49 @@ potatoFat = potato().fat * potatoMulti
 
 class number:
     def __init__(self):
-        self.one = 0
-        self.two = 0
-        self.three = 0
-        self.difference = 0
+        self.on = 0
+        self.tw = 0
+        self.thre = 0
 
-myList = [number() for index in range(0,5)]
-myList[0].one = 2
-myList[0].two = 4
-myList[0].three = 5
-
+myList = [number() for index in range(0,7)]
 
 
 one = 0.1
 two = 0.1
 three = 0.1
 holder = None
+count = 0
 orderArr = [0, 1000, 1000, 1000, 1000, 1000]
 
 for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
-            # print("%.1f" % one, "%.1f" % two, "%.1f" % three)
+
             # working out difference
             calDif = userCal - ((one * steakCal) + (two * fishCal) + (three * potatoCal))
             proDif = userPro - ((one * steakPro) + (two * fishPro) + (three * potatoPro))
             carbDif = userCarb - ((one * steakCarbs) + (two * fishCarbs) + (three * potatoCarbs))
             fatDif = userFat - ((one * steakFat) + (two * fishFat) + (three * potatoFat))
             totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
-            # print(totalDif)
+
             if y == 0.1 and x < 6:
                 orderArr[x] = totalDif
             if orderArr[0] > totalDif :
                 orderArr[0] = totalDif
+
             for index in range(1,6):
                 if orderArr[index] > totalDif:
+                    count += 1
                     holder = orderArr[index]
                     orderArr[index] = totalDif
                     orderArr[index - 1] = holder
 
-            '''
-            if myList[0].difference > totaldif:
-                holder = ml.d[index]
-                ml.d[index] = totalDif
-                ml.d[index - 1] = holder
-                mylist[index].one = one
-                mylist[index].two = two
-                mylist[index].three = three
-            '''
-            # sorting array thing
+            myList[count].on = one
+            myList[count].tw = two
+            myList[count].thre = three
+            count = 0
+
+            # moving up numbers
             three = three + 0.1
             if three > 2.1:
                 two = two + 0.1
@@ -107,8 +101,9 @@ for z in range(0,20):
                 one = one + 0.1
                 two = two - 2.0
 
-for index in range(0,6):
-    print("%.2f" % orderArr[index])
+for index in range(1,6):
+    print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
+
 '''
 - add to an array using insertion sort to get the closest value and so you dont have to sort through all posibilites
 - make sure maths works with more than 3 foods
