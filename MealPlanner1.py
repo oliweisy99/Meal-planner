@@ -31,6 +31,11 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
+'''
+make it so you can have any food,
+'''
+
+
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
 potatoMulti = userCarb / potato().carbs #9.266667
@@ -110,6 +115,7 @@ for z in range(0,20):
 
 for index in range(1,6):
     print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
+
 
 '''
 - make sure maths works with more than 3 foods
