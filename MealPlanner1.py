@@ -1,75 +1,21 @@
 
-
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
 
-
-# OOP 1
-class person:
-    #PRIVATE name : STRING
-    #PRIVATE age : INTEGER
-    #PRIVATE address : STRING
-
-    def display(self):
-        print("Person")
-        print(self.name)
-        print(self.age)
-        print(self.address)
-
+class food:
     def __init__(self):
-        self.name = "Mr X"
-        self.age = 15
-        self.address = "1 High Street"
-
-class student(person):
-    #PRIVATE studentID : STRING
-
-    def display(self):
-        print("Student")
-        print(self.studentID)
-        print(self.name)
-        print(self.age)
-        print(self.address)
-
-    def __init__(self):
-        self.studentID = "S001"
-        super().__init__()
-
-class teacher(person):
-    # PRIVATE teacherID : STRING
-    # PRIVATE specialism : STRING
-
-    def display(self):
-        print("Teacher")
-        print(self.teacherID)
-        print(self.specialism)
-        print(self.name)
-        print(self.age)
-        print(self.address)
+        self.name = ""
+        self.grams = 0
+        self.cals = 0
+        self.pros = 0
+        self.carbs = 0
+        self.fats = 0
 
 
-    def __init__(self):
-        super().__init__()
-        self.teacherID = "T001"
-        self.specialism = "Computer Science"
-
-
-a = person()
-aa = person()
-s = student()
-ss = student()
-aa.name = "jeffrey"
-ss.age = 123
-ss.studentID = "S002"
-
-a.display()
-aa.display()
-ss.display()
-s.display()
-
-
+steak = food()
+steak.carbs = 100
 
 class fish:
     def __init__(self):
@@ -99,7 +45,6 @@ class potato:
 '''
 make it so you can have any food,
 '''
-
 
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
