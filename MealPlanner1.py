@@ -13,9 +13,23 @@ class food:
         self.carbs = 0
         self.fats = 0
 
+'''
+add foods from text file to the class by reading from it and using name as the variable
+https://www.tutorialspoint.com/python/python_files_io.htm 
+all information needed about using files is in the link above
+'''
+'''
+so what we want it to do is go through the file, and in a loop add it to the food class
+we could store the name of the food in an array maybe so we could access it later. 
+'''
 
 steak = food()
-steak.carbs = 100
+steak.cals = 100
+steak.carbs = 25
+steak.grams = 100
+steak.pros = 40
+steak.fats = 20
+
 
 class fish:
     def __init__(self):
@@ -41,10 +55,6 @@ class potato:
         self.protein = 10
         self.fat = 5
         self.carbs = 30
-
-'''
-make it so you can have any food,
-'''
 
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
@@ -133,9 +143,11 @@ for index in range(1,6):
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
 - make sure it works with multiple amounts of foods to create actual meals, so have lots of foods and 
 make 3 different meals based on the foods to get really close amounts. 
+have it so it displays the amount of each food that is needed to get close to requirements
 
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
 different meals - sandwiches, salads, meat meals, cereals etc.
+do research into making good meals, types of meals etc.
 once you have the code to generate the best variations, now you can start making meals best on requirements such as 
 price, needs, aims and start adding in foods from websites to get it done. 
 then you can start adding more features whilst making it into a website 
