@@ -9,6 +9,10 @@ str = fo.read(6)
 print("Again read String is : ", str)
 fo.close()
 
+'''
+we want to be able to get information from file and then store it into food class
+'''
+
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
@@ -27,8 +31,8 @@ class food:
 add foods from text file to the class by reading from it and using name as the variable
 https://www.tutorialspoint.com/python/python_files_io.htm 
 all information needed about using files is in the link above
-'''
-'''
+
+
 so what we want it to do is go through the file, and in a loop add it to the food class
 we could store the name of the food in an array maybe so we could access it later. 
 '''
