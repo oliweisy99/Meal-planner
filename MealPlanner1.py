@@ -1,4 +1,14 @@
 
+fo = open("Foods", "r+")
+str = fo.read(86)
+print(str)
+position = fo.tell()
+print("Current file position : ", position)
+position = fo.seek(85, 0)
+str = fo.read(6)
+print("Again read String is : ", str)
+fo.close()
+
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
