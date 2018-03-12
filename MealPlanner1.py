@@ -1,16 +1,23 @@
 
 fo = open("Foods", "r+")
-str = fo.read(86)
+str = fo.read(50)
 print(str)
 position = fo.tell()
 print("Current file position : ", position)
-position = fo.seek(85, 0)
-str = fo.read(6)
+position = fo.seek(59, 0)
+str = fo.read(15)
 print("Again read String is : ", str)
 fo.close()
 
 '''
+steak = str
+str = food()
+str.name = str
+str.grams = int(str)
+
+
 we want to be able to get information from file and then store it into food class
+
 '''
 
 userCal = float(input("Whats your calories requirements?"))
@@ -38,6 +45,7 @@ we could store the name of the food in an array maybe so we could access it late
 '''
 
 steak = food()
+steak.name = "steak"
 steak.cals = 100
 steak.carbs = 25
 steak.grams = 100
