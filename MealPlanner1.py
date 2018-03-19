@@ -1,10 +1,10 @@
 
 fo = open("Foods", "r+")
-str = fo.read(50)
+str = fo.read(51)
 print(str)
 position = fo.tell()
 print("Current file position : ", position)
-position = fo.seek(59, 0)
+position = fo.seek(50, 0)
 str = fo.read(15)
 print("Again read String is : ", str)
 fo.close()
@@ -14,7 +14,21 @@ steak = str
 str = food()
 str.name = str
 str.grams = int(str)
+str = fo.read(i)
+if str = " ":
+    i += 1
+while true:
+    if str != " "
+        i += 1
+fo.seak(n) - n is the new start position
+str = fo.read(i) reading i number of letters from start position n
+food.name = str assign value to 
+break
+if str = " "
+    i += 1
+if str = ":"
 
+    
 
 we want to be able to get information from file and then store it into food class
 
