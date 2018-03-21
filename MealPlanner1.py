@@ -10,13 +10,22 @@ print("Again read String is : ", str)
 fo.close()
 
 '''
-steak = str
-str = food()
-str.name = str
-str.grams = int(str)
+
+n = 51- this is where steak starts
+i = 1
+while finish == False:
+fo.seek(n,0)
 str = fo.read(i)
-if str = " ":
-    i += 1
+you need checks to see for the following:
+- letters/words
+- spaces
+- colons
+- numbers str == int(str)
+isinstance(str, int) = returns true if str is an integer and false if not
+isinstance(str, str) = returns true if str is a string and false if not
+could have a count, so if ":" has been seen 3 times, then you know the next number is proteins
+if str != " " or str != ":" or str != int(str):
+    food.name = str
 while true:
     if str != " "
         i += 1
@@ -33,7 +42,6 @@ if str = ":"
 we want to be able to get information from file and then store it into food class
 
 '''
-
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
