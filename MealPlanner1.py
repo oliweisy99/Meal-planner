@@ -11,33 +11,31 @@ fo.close()
 
 '''
 
-n = 51- this is where steak starts
+n = 51 - this is where steak starts
 i = 1
 while finish == False:
 fo.seek(n,0)
-str = fo.read(i)
+check = fo.read(i)
 you need checks to see for the following:
 - letters/words
 - spaces
 - colons
-- numbers str == int(str)
-isinstance(str, int) = returns true if str is an integer and false if not
-isinstance(str, str) = returns true if str is a string and false if not
-could have a count, so if ":" has been seen 3 times, then you know the next number is proteins
-if str != " " or str != ":" or str != int(str):
-    food.name = str
-while true:
-    if str != " "
-        i += 1
+- numbers check == int(str)
+isinstance(check, int) = returns true if check is an integer and false if not
+isinstance(check, str) = returns true if check is a string and false if not
+could have a count, so if ":" has been seen 3 times, then you know the next number is proteins 
+if isinstance(check, str) == TRUE: #you want it to go through letter by letter until it is either a space, a number or a colon. 
+    check = fo.read(i + 1)
+if 
 fo.seak(n) - n is the new start position
-str = fo.read(i) reading i number of letters from start position n
-food.name = str assign value to 
+check = fo.read(i) reading i number of letters from start position n
+food.name = check assign value to 
 break
-if str = " "
+if check = " "
     i += 1
-if str = ":"
+if check = ":"
 
-    
+
 
 we want to be able to get information from file and then store it into food class
 
