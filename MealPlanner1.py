@@ -1,21 +1,16 @@
 
 fo = open("Foods", "r+")
-str = fo.read(51)
+str = fo.read(40)
 print(str)
 position = fo.tell()
 print("Current file position : ", position)
-position = fo.seek(50, 0)
-str = fo.read(15)
-print("Again read String is : ", str)
+position = fo.seek(40, 0)
+str = fo.read(22)
+print("Again read String is :", str)
 fo.close()
 
 '''
 
-n = 51 - this is where steak starts
-i = 1
-while finish == False:
-fo.seek(n,0)
-check = fo.read(i)
 you need checks to see for the following:
 - letters/words
 - spaces
@@ -24,9 +19,32 @@ you need checks to see for the following:
 isinstance(check, int) = returns true if check is an integer and false if not
 isinstance(check, str) = returns true if check is a string and false if not
 could have a count, so if ":" has been seen 3 times, then you know the next number is proteins 
-if isinstance(check, str) == TRUE: #you want it to go through letter by letter until it is either a space, a number or a colon. 
-    check = fo.read(i + 1)
-if 
+
+fo = open("Foods", "r+")
+n = 40
+i = 1
+count = 0
+end = False
+fo.seek(n,0)
+check = fo.read(i)
+
+while end == false
+    while isinstance(check, str) == TRUE AND check != ":" #you want it to go through letter by letter until it is either a space, a number or a colon. 
+        check = fo.read(i)
+        i += 1
+    if check == ":":
+        count += 1
+    if count == 1:
+    if count == 2:
+    if count == 3:
+    if count == 4:
+    if count == 5:
+        digit = food.fats
+
+end is = True if the file reads #.
+fo.close() afterwards. 
+    
+    
 fo.seak(n) - n is the new start position
 check = fo.read(i) reading i number of letters from start position n
 food.name = check assign value to 
@@ -186,6 +204,10 @@ procedures, multi threading, 0.001, using less variables, making code more effic
 - make sure it works with multiple amounts of foods to create actual meals, so have lots of foods and 
 make 3 different meals based on the foods to get really close amounts. 
 have it so it displays the amount of each food that is needed to get close to requirements
+# we can have variables for each food [PRIM, MEAT, SOIL, TAST, SIDE, SUCE ETC.]
+# PRIM = primary food, made for dinners or main course 
+# SIDE = side dish
+
 
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
 different meals - sandwiches, salads, meat meals, cereals etc.
