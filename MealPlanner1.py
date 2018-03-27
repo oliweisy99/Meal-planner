@@ -1,4 +1,12 @@
-
+class food:
+    def __init__(self):
+        self.name = ""
+        self.grams = 0
+        self.cals = 0
+        self.pros = 0
+        self.carbs = 0
+        self.fats = 0
+'''
 fo = open("Foods", "r+")
 str = fo.read(40)
 print(str)
@@ -10,7 +18,28 @@ print("Again read String is :", str)
 fo.close()
 
 '''
+a = "a"
+n = 40
+i = 1
+count = 0
+end = False
+check = ""
+fo = open("Foods", "r+")
+position = fo.seek(n, 0)
+while end == False: #check != ":" and isinstance(check, str):
+    check = fo.read(i)
+    if check == ":":
+        end = True
 
+        break
+    print(check)
+    n = n + 1
+    fo.seek(n,0)
+fo.close()
+print(check)
+    # you want it to go through letter by letter until it is either a space, a number or a colon.
+
+'''
 you need checks to see for the following:
 - letters/words
 - spaces
@@ -28,10 +57,14 @@ end = False
 fo.seek(n,0)
 check = fo.read(i)
 
-while end == false
+while end == false: 
     while isinstance(check, str) == TRUE AND check != ":" #you want it to go through letter by letter until it is either a space, a number or a colon. 
         check = fo.read(i)
         i += 1
+        
+    check is now == steak
+    check = food()
+    check.name = str(check)    
     if check == ":":
         count += 1
     if count == 1:
@@ -40,7 +73,8 @@ while end == false
     if count == 4:
     if count == 5:
         digit = food.fats
-
+        also moves down a line 
+        
 end is = True if the file reads #.
 fo.close() afterwards. 
     
@@ -62,15 +96,6 @@ userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
-
-class food:
-    def __init__(self):
-        self.name = ""
-        self.grams = 0
-        self.cals = 0
-        self.pros = 0
-        self.carbs = 0
-        self.fats = 0
 
 '''
 add foods from text file to the class by reading from it and using name as the variable
@@ -195,8 +220,6 @@ for z in range(0,20):
 
 for index in range(1,6):
     print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
-
-
 '''
 - make sure maths works with more than 3 foods
 - make the code better and more accurate to get results faster: 
