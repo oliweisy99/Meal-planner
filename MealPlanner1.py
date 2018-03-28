@@ -6,6 +6,7 @@ class food:
         self.pros = 0
         self.carbs = 0
         self.fats = 0
+
 '''
 fo = open("Foods", "r+")
 str = fo.read(40)
@@ -16,27 +17,39 @@ position = fo.seek(40, 0)
 str = fo.read(22)
 print("Again read String is :", str)
 fo.close()
-
 '''
+
+
 a = "a"
 n = 40
 i = 1
 count = 0
 end = False
+nm = ""
 check = ""
 fo = open("Foods", "r+")
 position = fo.seek(n, 0)
-while end == False: #check != ":" and isinstance(check, str):
+while end == False and check != ":":
     check = fo.read(i)
     if check == ":":
         end = True
-
         break
-    print(check)
-    n = n + 1
-    fo.seek(n,0)
-fo.close()
+    if check != ":":
+        print(check)
+        n = n + 1
+        count = count + 1
+        fo.seek(n,0)
+fo.seek(n-count, 0)
+i = i + (count - 1)
+check = fo.read(i)
 print(check)
+fo.close()
+nm = str(check)
+check = food()
+check.name = nm
+print(check.name)
+print(nm)
+
     # you want it to go through letter by letter until it is either a space, a number or a colon.
 
 '''
