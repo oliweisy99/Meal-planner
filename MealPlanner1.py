@@ -50,7 +50,7 @@ check.name = nm
 print(check.name)
 print(nm)
 
-    # you want it to go through letter by letter until it is either a space, a number or a colon.
+    # you want it to go through letter by letter until it is either a number or a colon.
 
 '''
 you need checks to see for the following:
