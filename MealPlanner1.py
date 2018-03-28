@@ -19,8 +19,6 @@ print("Again read String is :", str)
 fo.close()
 '''
 
-
-a = "a"
 n = 40
 i = 1
 count = 0
@@ -28,27 +26,24 @@ end = False
 nm = ""
 check = ""
 fo = open("Foods", "r+")
-position = fo.seek(n, 0)
+fo.seek(n, 0)
 while end == False and check != ":":
     check = fo.read(i)
     if check == ":":
         end = True
         break
     if check != ":":
-        print(check)
         n = n + 1
         count = count + 1
         fo.seek(n,0)
 fo.seek(n-count, 0)
 i = i + (count - 1)
 check = fo.read(i)
-print(check)
 fo.close()
 nm = str(check)
 check = food()
 check.name = nm
 print(check.name)
-print(nm)
 
     # you want it to go through letter by letter until it is either a number or a colon.
 
@@ -243,7 +238,6 @@ have it so it displays the amount of each food that is needed to get close to re
 # we can have variables for each food [PRIM, MEAT, SOIL, TAST, SIDE, SUCE ETC.]
 # PRIM = primary food, made for dinners or main course 
 # SIDE = side dish
-
 
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
 different meals - sandwiches, salads, meat meals, cereals etc.
