@@ -44,8 +44,11 @@ while end == False:
     check = food()
     check.name = nm
     if colonCount == 1:
+        fo.seek(n+1)
+        print(fo.read(i))
+        # maybe call a function which can be run for all 5 if it is the same
         # you want it to read the next digits and assign it to grams
-        print()
+        end = True
     fo.close()
 
 '''
@@ -64,7 +67,7 @@ while end == False:
         colonCount = 0
         also moves down a line 
         
-end is = True if the file reads #.
+end = True if the file reads #.
 fo.close() afterwards. 
 
 we want to be able to get information from file and then store it into food class
