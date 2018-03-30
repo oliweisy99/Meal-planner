@@ -22,54 +22,34 @@ fo.close()
 n = 40
 i = 1
 count = 0
+colonCount = 0
 end = False
 nm = ""
 check = ""
 fo = open("Foods", "r+")
 fo.seek(n, 0)
-while end == False and check != ":":
-    check = fo.read(i)
-    if check == ":":
-        end = True
-        break
-    if check != ":":
-        n = n + 1
-        count = count + 1
-        fo.seek(n,0)
-fo.seek(n-count, 0)
-i = i + (count - 1)
-check = fo.read(i)
-fo.close()
-nm = str(check)
-check = food()
-check.name = nm
-print(check.name)
-
-    # you want it to go through letter by letter until it is either a number or a colon.
+while end == False:
+    while check != ":":
+        check = fo.read(i)
+        if check == ":":
+            colonCount = colonCount + 1
+            break
+        if check != ":":
+            n = n + 1
+            count = count + 1
+            fo.seek(n,0)
+    fo.seek(n-count, 0)
+    check = fo.read(count)
+    nm = str(check)
+    check = food()
+    check.name = nm
+    if colonCount == 1:
+        # you want it to read the next digits and assign it to grams
+        print()
+    fo.close()
 
 '''
-you need checks to see for the following:
-- letters/words
-- spaces
-- colons
-- numbers check == int(str)
-isinstance(check, int) = returns true if check is an integer and false if not
-isinstance(check, str) = returns true if check is a string and false if not
-could have a count, so if ":" has been seen 3 times, then you know the next number is proteins 
 
-fo = open("Foods", "r+")
-n = 40
-i = 1
-count = 0
-end = False
-fo.seek(n,0)
-check = fo.read(i)
-
-while end == false: 
-    while isinstance(check, str) == TRUE AND check != ":" #you want it to go through letter by letter until it is either a space, a number or a colon. 
-        check = fo.read(i)
-        i += 1
-        
     check is now == steak
     check = food()
     check.name = str(check)    
@@ -81,21 +61,11 @@ while end == false:
     if count == 4:
     if count == 5:
         digit = food.fats
+        colonCount = 0
         also moves down a line 
         
 end is = True if the file reads #.
 fo.close() afterwards. 
-    
-    
-fo.seak(n) - n is the new start position
-check = fo.read(i) reading i number of letters from start position n
-food.name = check assign value to 
-break
-if check = " "
-    i += 1
-if check = ":"
-
-
 
 we want to be able to get information from file and then store it into food class
 
