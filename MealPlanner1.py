@@ -24,12 +24,15 @@ i = 1
 count = 0
 colonCount = 0
 end = False
-nm = ""
-check = ""
+nm = None
+check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
+
 while end == False:
+
     while check != ":":
+
         check = fo.read(i)
         if check == ":":
             colonCount = colonCount + 1
@@ -38,19 +41,25 @@ while end == False:
             n = n + 1
             count = count + 1
             fo.seek(n,0)
+
     fo.seek(n-count, 0)
     check = fo.read(count)
     nm = str(check)
-    check = food()
-    check.name = nm
+    nm = food()
+    nm.name = str(check)
+    print(nm.name)
+
     if colonCount == 1:
         fo.seek(n+1)
-        print(fo.read(i))
+        check = fo.read(i)
+        print(check)
         # maybe call a function which can be run for all 5 if it is the same
         # you want it to read the next digits and assign it to grams
         end = True
-    fo.close()
 
+
+fo.close()
+print(nm.name)
 '''
 
     check is now == steak
