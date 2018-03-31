@@ -7,18 +7,6 @@ class food:
         self.carbs = 0
         self.fats = 0
 
-'''
-fo = open("Foods", "r+")
-str = fo.read(40)
-print(str)
-position = fo.tell()
-print("Current file position : ", position)
-position = fo.seek(40, 0)
-str = fo.read(22)
-print("Again read String is :", str)
-fo.close()
-'''
-
 n = 40
 i = 1
 count = 0
@@ -48,63 +36,32 @@ while end == False:
     nm = food()
     nm.name = str(check)
 
-while end == False:
     if colonCount == 1:
         count = 0
         fo.seek(n+1)
         check = fo.read(i)
-        if check != ":":
-            n = n + 1
-            count = count + 1
-            fo.seek(n,0)
-            print(check)
-        if check == ":":
-            colonCount = colonCount + 1
-            end = True
-            break
+        while end == False:
+            if check != ":":
+                n = n + 1
+                count = count + 1
+                fo.seek(n,0)
+                print(check)
+            if check == ":":
+                colonCount = colonCount + 1
+                end = True
+                break
         # maybe call a function which can be run for all 5 if it is the same
         # you want it to read the next digits and assign it to grams
-        fo.seek(n - count, 0)
-        check = fo.read(count)
-        print(check)
-
 
 fo.close()
-'''
 
-    check is now == steak
-    check = food()
-    check.name = str(check)    
-    if check == ":":
-        count += 1
-    if count == 1:
-    if count == 2:
-    if count == 3:
-    if count == 4:
-    if count == 5:
-        digit = food.fats
-        colonCount = 0
-        also moves down a line 
-        
-end = True if the file reads #.
-fo.close() afterwards. 
-
-we want to be able to get information from file and then store it into food class
-
-'''
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
 
 '''
-add foods from text file to the class by reading from it and using name as the variable
 https://www.tutorialspoint.com/python/python_files_io.htm 
-all information needed about using files is in the link above
-
-
-so what we want it to do is go through the file, and in a loop add it to the food class
-we could store the name of the food in an array maybe so we could access it later. 
 '''
 
 steak = food()
@@ -173,7 +130,6 @@ class number:
 
 myList = [number() for index in range(0,7)]
 
-
 one = 0.1
 two = 0.1
 three = 0.1
@@ -222,14 +178,19 @@ for index in range(1,6):
     print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
 '''
 - make sure maths works with more than 3 foods
+
 - make the code better and more accurate to get results faster: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
+it needs to be quick if you want to create 21 different unique meals for a week, and in the future for a month 
+and also to be able to completely create and calculate a new meal plan if and when the user changes foods 
+
 - make sure it works with multiple amounts of foods to create actual meals, so have lots of foods and 
 make 3 different meals based on the foods to get really close amounts. 
-have it so it displays the amount of each food that is needed to get close to requirements
+
+- have it so it displays the amount of each food that is needed to get close to requirements
 # we can have variables for each food [PRIM, MEAT, SOIL, TAST, SIDE, SUCE ETC.]
-# PRIM = primary food, made for dinners or main course 
-# SIDE = side dish
+# PRIM = primary food, made for dinners / main courses 
+# SIDE = side dish that go with PRIMs
 
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
 different meals - sandwiches, salads, meat meals, cereals etc.
