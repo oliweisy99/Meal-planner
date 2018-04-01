@@ -35,6 +35,7 @@ while end == False:
     nm = str(check)
     nm = food()
     nm.name = str(check)
+
     if colonCount == 1:
         count = 0
         fo.seek(n+1)
@@ -182,7 +183,7 @@ for index in range(1,6):
 
 - make the code better and more accurate to get results faster: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
-it needs to be quick if you want to create 21 different unique meals for a week, and in the future for a month 
+it needs to be quick if you want to create loads of different unique meals for a week, and in the future for a month 
 and also to be able to completely create and calculate a new meal plan if and when the user changes foods 
 
 - make sure it works with multiple amounts of foods to create actual meals, so have lots of foods and 
