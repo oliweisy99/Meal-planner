@@ -45,10 +45,10 @@ while end == False:
             count = count + 1
             fo.seek(n, 0)
         if check == ":":
-            fo.seek(n - count, 0)
-            check = fo.read(count)
-            print(check)
+            fo.seek(n - (count - 1) , 0)
+            check = fo.read(count - 2)
             colonCount = colonCount + 1
+            nm.grams = int(check)
             end = True
             break
         # maybe call a function which can be run for all 5 if it is the same
