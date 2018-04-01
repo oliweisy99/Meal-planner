@@ -35,21 +35,22 @@ while end == False:
     nm = str(check)
     nm = food()
     nm.name = str(check)
-
     if colonCount == 1:
         count = 0
         fo.seek(n+1)
         check = fo.read(i)
-        while end == False:
-            if check != ":":
-                n = n + 1
-                count = count + 1
-                fo.seek(n,0)
-                print(check)
-            if check == ":":
-                colonCount = colonCount + 1
-                end = True
-                break
+        while check != ":":
+            check = fo.read(i)
+            n = n + 1
+            count = count + 1
+            fo.seek(n, 0)
+        if check == ":":
+            fo.seek(n - count, 0)
+            check = fo.read(count)
+            print(check)
+            colonCount = colonCount + 1
+            end = True
+            break
         # maybe call a function which can be run for all 5 if it is the same
         # you want it to read the next digits and assign it to grams
 
