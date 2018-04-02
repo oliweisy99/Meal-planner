@@ -61,15 +61,51 @@ while end == False:
             count = count + 1
             fo.seek(n, 0)
         if check == ":":
+            fo.seek(n - count, 0)
+            check = fo.read(count - 1)
+            colonCount = colonCount + 1
+            nm.cals = int(check)
+    if colonCount == 3:
+        count = 0
+        fo.seek(n)
+        check = fo.read(i)
+        print(check)
+        while check != ":":
+            check = fo.read(i)
+            n = n + 1
+            count = count + 1
+            fo.seek(n, 0)
+        if check == ":":
             fo.seek(n - (count - 1), 0)
             check = fo.read(count - 2)
             colonCount = colonCount + 1
-            print(check)
             end = True
             break
-        # maybe call a function which can be run for all 5 if it is the same
+    # maybe call a function which can be run for all 5 if it is the same
         # you want it to read the next digits and assign it to grams
 
+'''
+def digits(att, num):
+    global colonCount
+    if colonCount == num:
+        count = 0
+        fo.seek(n+1)
+        check = fo.read(i)
+        while check != ":":
+            check = fo.read(i)
+            n = n + 1
+            count = count + 1
+            fo.seek(n, 0)
+        if check == ":":
+            fo.seek(n - (count - 1) , 0)
+            check = fo.read(count - 2)
+            colonCount = colonCount + 1
+            nm.att = int(check)
+            
+digits("grams", 1)
+digits(calorie, 2)
+digits(protein, 3)
+'''
 fo.close()
 
 userCal = float(input("Whats your calories requirements?"))
