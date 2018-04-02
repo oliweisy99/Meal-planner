@@ -50,6 +50,21 @@ while end == False:
             check = fo.read(count - 2)
             colonCount = colonCount + 1
             nm.grams = int(check)
+
+    if colonCount == 2:
+        count = 0
+        fo.seek(n + 1)
+        check = fo.read(i)
+        while check != ":":
+            check = fo.read(i)
+            n = n + 1
+            count = count + 1
+            fo.seek(n, 0)
+        if check == ":":
+            fo.seek(n - (count - 1), 0)
+            check = fo.read(count - 2)
+            colonCount = colonCount + 1
+            print(check)
             end = True
             break
         # maybe call a function which can be run for all 5 if it is the same
@@ -73,7 +88,6 @@ steak.carbs = 25
 steak.grams = 100
 steak.pros = 40
 steak.fats = 20
-
 
 class fish:
     def __init__(self):
