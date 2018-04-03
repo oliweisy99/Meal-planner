@@ -36,15 +36,33 @@ while end == False:
         nm = str(check)
         nm = food()
         nm.name = str(check)
-        print(nm.name)
-        count = 0 #trying to keep the top simple bit then just have if statements in a while loop
+        count = -1
         check = fo.read(i)
+    if colonCount == 2:
+        nm = int(check)
         print(check)
-        break
-    if colonCount == 2: # so that we can declare classes in if statements
-
-        break
-
+        count = -1
+        check = fo.read(i)
+    if colonCount == 3:
+        nm = int(check)
+        print(check)
+        count = -1
+        check = fo.read(i)
+    if colonCount == 4:
+        nm = int(check)
+        print(check)
+        count = -1
+        check = fo.read(i)
+    if colonCount == 5:
+        nm = int(check)
+        print(check)
+        count = -1
+        check = fo.read(i)
+    if colonCount == 6:
+        nm = int(check)
+        print(check)
+        count = -1
+        check = fo.read(i)
 '''
     if colonCount == 1:
         count = 0
