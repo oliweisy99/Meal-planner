@@ -16,7 +16,6 @@ nm = None
 check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
-
 while end == False:
 
     while check != ":":
@@ -32,10 +31,17 @@ while end == False:
 
     fo.seek(n-count, 0)
     check = fo.read(count)
-    nm = str(check)
-    nm = food()
-    nm.name = str(check)
+    fo.seek(n, 0)
+    print(check)
+    if colonCount == 1:
+        nm = str(check)
+        nm = food()
+        nm.name = str(check)
+        count = 0 #trying to keep the top simple bit then just have if statements in a while loop
+    if colonCount == 2: # so that we can declare classes in if statements
+        break
 
+'''
     if colonCount == 1:
         count = 0
         fo.seek(n+1)
@@ -48,6 +54,7 @@ while end == False:
         if check == ":":
             fo.seek(n - (count - 1) , 0)
             check = fo.read(count - 2)
+            print(check)
             colonCount = colonCount + 1
             nm.grams = int(check)
 
@@ -63,26 +70,29 @@ while end == False:
         if check == ":":
             fo.seek(n - count, 0)
             check = fo.read(count - 1)
+            print(check)
             colonCount = colonCount + 1
             nm.cals = int(check)
+
     if colonCount == 3:
         count = 0
-        fo.seek(n)
+        fo.seek(n+1)
         check = fo.read(i)
-        print(check)
         while check != ":":
             check = fo.read(i)
             n = n + 1
             count = count + 1
             fo.seek(n, 0)
         if check == ":":
-            fo.seek(n - (count - 1), 0)
-            check = fo.read(count - 2)
+            fo.seek(n - count, 0)
+            check = fo.read(count + 1)
+            print(check)
             colonCount = colonCount + 1
             end = True
             break
     # maybe call a function which can be run for all 5 if it is the same
         # you want it to read the next digits and assign it to grams
+'''
 
 '''
 def digits(att, num):
