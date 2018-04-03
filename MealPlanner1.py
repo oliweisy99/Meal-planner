@@ -7,13 +7,15 @@ class food:
         self.carbs = 0
         self.fats = 0
 
-def assign(param, nm): # where param is either grams / calories etc. and nm is the value obtained from the file [int(check)]
+def assign(param, nam): # where param is either grams / calories etc. and nm is the value obtained from the file [int(check)]
     global count, check
-    nm = int(check)
+    nam = int(check)
+    param = str(param)
     print(check)
     count = -1
     check = fo.read(i)
-    nm.param = nm
+    nam.param = nam
+# maybe make it a method of the food class
 
 n = 40
 i = 1
