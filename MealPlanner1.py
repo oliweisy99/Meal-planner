@@ -7,6 +7,14 @@ class food:
         self.carbs = 0
         self.fats = 0
 
+def assign(param, nm): # where param is either grams / calories etc. and nm is the value obtained from the file [int(check)]
+    global count, check
+    nm = int(check)
+    print(check)
+    count = -1
+    check = fo.read(i)
+    nm.param = nm
+
 n = 40
 i = 1
 count = 0
@@ -63,6 +71,7 @@ while end == False:
         print(check)
         count = -1
         check = fo.read(i)
+
 '''
     if colonCount == 1:
         count = 0
