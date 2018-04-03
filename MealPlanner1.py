@@ -31,14 +31,18 @@ while end == False:
 
     fo.seek(n-count, 0)
     check = fo.read(count)
-    fo.seek(n, 0)
-    print(check)
+    fo.seek(n+1, 0)
     if colonCount == 1:
         nm = str(check)
         nm = food()
         nm.name = str(check)
+        print(nm.name)
         count = 0 #trying to keep the top simple bit then just have if statements in a while loop
+        check = fo.read(i)
+        print(check)
+        break
     if colonCount == 2: # so that we can declare classes in if statements
+
         break
 
 '''
