@@ -31,6 +31,10 @@ def assign(check, colonCount)
         nm.cals = int(check)
     if colonCount == 4:
         nm.pros == int(check)
+    if colonCount == 5:
+        nm.carbs = om
+    if colonCount == 6:
+        nm.fats = om
     count = -1
     check = fo.read(i)
 '''
