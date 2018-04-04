@@ -7,14 +7,33 @@ class food:
         self.carbs = 0
         self.fats = 0
 
-def assign(param, nam): # where param is either grams / calories etc. and nm is the value obtained from the file [int(check)]
-    global count, check
-    nam = int(check)
-    param = str(param)
-    print(check)
+# there will be 6 if statements
+# each one passes through different things
+
+'''
+    if colonCount == 1:
+        print(check)
+        nm = str(check)
+        nm = food()
+        nm.name = str(check)
+        count = -1
+        check = fo.read(i)
+def assign(check, colonCount)
+    fd = str(check)
+    om = int(check)
+    if colonCount == 1:
+        fd = nm
+        nm = food()
+        nm.name = str(check)    
+    if colonCount == 2:
+        nm.grams = int(check)
+    if colonCount == 3:
+        nm.cals = int(check)
+    if colonCount == 4:
+        nm.pros == int(check)
     count = -1
     check = fo.read(i)
-    nam.param = nam
+'''
 # maybe make it a method of the food class
 
 n = 40
@@ -38,11 +57,11 @@ while end == False:
             n = n + 1
             count = count + 1
             fo.seek(n,0)
-
     fo.seek(n-count, 0)
     check = fo.read(count)
     fo.seek(n+1, 0)
     if colonCount == 1:
+        print(check)
         nm = str(check)
         nm = food()
         nm.name = str(check)
