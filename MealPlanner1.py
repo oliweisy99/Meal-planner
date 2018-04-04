@@ -311,7 +311,7 @@ make 3 different meals based on the foods to get really close amounts.
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
 different meals - sandwiches, salads, meat meals, cereals etc.
 do research into making good meals, types of meals etc.
-once you have the code to generate the best variations, now you can start making meals best on requirements such as 
+once you have the code to generate the best variations, now you can start making meals based on requirements such as 
 price, needs, aims and start adding in foods from websites to get it done. 
 then you can start adding more features whilst learning website development 
 then you start getting the business side of it sorted so meals can be shopped, made and delivered
