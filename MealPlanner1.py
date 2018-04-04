@@ -18,23 +18,25 @@ class food:
         nm.name = str(check)
         count = -1
         check = fo.read(i)
-def assign(check, colonCount)
-    fd = str(check)
-    om = int(check)
-    if colonCount == 1:
-        fd = nm
+        
+def assign(chk, coCnt):
+global count, check
+    fd = str(chk)
+    nom = int(chk)
+    if coCnt == 1:
+        nm = fd
         nm = food()
-        nm.name = str(check)    
-    if colonCount == 2:
-        nm.grams = int(check)
-    if colonCount == 3:
-        nm.cals = int(check)
-    if colonCount == 4:
-        nm.pros == int(check)
-    if colonCount == 5:
-        nm.carbs = om
-    if colonCount == 6:
-        nm.fats = om
+        nm.name = fd  
+    if coCnt == 2:
+        nm.grams = nom
+    if coCnt == 3:
+        nm.cals = nom
+    if coCnt == 4:
+        nm.pros == nom
+    if coCnt == 5:
+        nm.carbs = nom
+    if coCnt == 6:
+        nm.fats = nom
     count = -1
     check = fo.read(i)
 '''
@@ -50,9 +52,7 @@ check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
 while end == False:
-
     while check != ":":
-
         check = fo.read(i)
         if check == ":":
             colonCount = colonCount + 1
@@ -64,36 +64,33 @@ while end == False:
     fo.seek(n-count, 0)
     check = fo.read(count)
     fo.seek(n+1, 0)
+    # assign(check, colonCount)
     if colonCount == 1:
-        print(check)
         nm = str(check)
         nm = food()
         nm.name = str(check)
+        print(nm.name)
         count = -1
         check = fo.read(i)
     if colonCount == 2:
-        nm = int(check)
-        print(check)
+        nm.grams = int(check)
+        print(nm.grams)
         count = -1
         check = fo.read(i)
     if colonCount == 3:
-        nm = int(check)
-        print(check)
+        nm.cals = int(check)
         count = -1
         check = fo.read(i)
     if colonCount == 4:
-        nm = int(check)
-        print(check)
+        nm.pros = int(check)
         count = -1
         check = fo.read(i)
     if colonCount == 5:
-        nm = int(check)
-        print(check)
+        nm.carbs = int(check)
         count = -1
         check = fo.read(i)
     if colonCount == 6:
-        nm = int(check)
-        print(check)
+        nm.fats = int(check)
         count = -1
         check = fo.read(i)
 
@@ -173,6 +170,7 @@ digits(calorie, 2)
 digits(protein, 3)
 '''
 fo.close()
+
 
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
