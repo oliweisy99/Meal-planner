@@ -18,28 +18,25 @@ def assign(coCnt):
         nm = nom
         nm = food()
         nm.name = nom
-        print(nm.name)
+       # print(nm.name)
     if coCnt == 2:
         nm.grams = nom
-        print(nm.grams)
+       # print(nm.grams)
     if coCnt == 3:
         nm.cals = nom
-        print(nm.cals)
+        #print(nm.cals)
     if coCnt == 4:
         nm.pros = nom
-        print(nm.pros)
+        #print(nm.pros)
     if coCnt == 5:
         nm.carbs = nom
-        print(nm.carbs)
+        #print(nm.carbs)
     if coCnt == 6:
         nm.fats = nom
-        print(nm.fats)
+        colonCount = 0
     count = -1
     check = fo.read(i)
 
-# if check == *, then colonCount = 0 and it starts a new line by adding 1 to n in fo.seek
-# if check == #, then it has reached end of file and then it terminates.
-# maybe make it a method of the food class
 n = 40
 i = 1
 nom = None
@@ -57,10 +54,9 @@ while end == False:
             colonCount = colonCount + 1
             break
         if check == "*":
-            n = n + 4
-            fo.seek(n,0)
-            colonCount = 0
-        if check != ":" and check != "*" and check != "#":
+            n = n - 1
+            count = count - 1
+        if check != ":" and check != "#":
             n = n + 1
             count = count + 1
             fo.seek(n,0)
