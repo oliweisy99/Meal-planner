@@ -18,18 +18,22 @@ def assign(coCnt):
         nm = nom
         nm = food()
         nm.name = nom
+        print(nm.name)
     if coCnt == 2:
         nm.grams = nom
+        print(nm.grams)
     if coCnt == 3:
         nm.cals = nom
+        print(nm.cals)
     if coCnt == 4:
         nm.pros = nom
+        print(nm.pros)
     if coCnt == 5:
         nm.carbs = nom
+        print(nm.carbs)
     if coCnt == 6:
         nm.fats = nom
-    if coCnt == 7:
-        colonCount = 0
+        print(nm.fats)
     count = -1
     check = fo.read(i)
 
@@ -49,19 +53,22 @@ fo.seek(n, 0)
 while end == False:
     while check != ":":
         check = fo.read(i)
-        if check == ":" or check == "*":
-            print(check)
+        if check == ":":
             colonCount = colonCount + 1
             break
-        if check != ":":
+        if check == "*":
+            n = n + 4
+            fo.seek(n,0)
+            colonCount = 0
+        if check != ":" and check != "*" and check != "#":
             n = n + 1
             count = count + 1
             fo.seek(n,0)
         if check == "#":
             end = True
+            break
     fo.seek(n-count, 0)
     check = fo.read(count)
-    print(check)
     fo.seek(n+1, 0)
     assign(colonCount)
 
