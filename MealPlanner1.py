@@ -9,7 +9,7 @@ class food:
       # self.attributes = []
         
 def assign(coCnt):
-    global count, check, nm, end, nom
+    global count, check, nm, end, nom, colonCount
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -28,7 +28,8 @@ def assign(coCnt):
         nm.carbs = nom
     if coCnt == 6:
         nm.fats = nom
-        end = True
+    if coCnt == 7:
+        colonCount = 0
     count = -1
     check = fo.read(i)
 
@@ -48,18 +49,21 @@ fo.seek(n, 0)
 while end == False:
     while check != ":":
         check = fo.read(i)
-        if check == ":":
+        if check == ":" or check == "*":
+            print(check)
             colonCount = colonCount + 1
             break
         if check != ":":
             n = n + 1
             count = count + 1
             fo.seek(n,0)
+        if check == "#":
+            end = True
     fo.seek(n-count, 0)
     check = fo.read(count)
+    print(check)
     fo.seek(n+1, 0)
     assign(colonCount)
-
 
 fo.close()
 
@@ -72,14 +76,6 @@ userFat = float(input("Whats your fat requirements?"))
 '''
 https://www.tutorialspoint.com/python/python_files_io.htm 
 '''
-
-steak = food()
-steak.name = "steak"
-steak.cals = 100
-steak.carbs = 25
-steak.grams = 100
-steak.pros = 40
-steak.fats = 20
 
 class fish:
     def __init__(self):
