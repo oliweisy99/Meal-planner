@@ -6,44 +6,38 @@ class food:
         self.pros = 0
         self.carbs = 0
         self.fats = 0
-
-# there will be 6 if statements
-# each one passes through different things
-
-'''
-    if colonCount == 1:
-        print(check)
-        nm = str(check)
-        nm = food()
-        nm.name = str(check)
-        count = -1
-        check = fo.read(i)
+      # self.attributes = []
         
-def assign(chk, coCnt):
-global count, check
-    fd = str(chk)
-    nom = int(chk)
+def assign(coCnt):
+    global count, check, nm, end, nom
+    if isinstance(check, str) == True :
+        nom = str(check)
+    else:
+        nom = int(check)
     if coCnt == 1:
-        nm = fd
+        nm = nom
         nm = food()
-        nm.name = fd  
+        nm.name = nom
     if coCnt == 2:
         nm.grams = nom
     if coCnt == 3:
         nm.cals = nom
     if coCnt == 4:
-        nm.pros == nom
+        nm.pros = nom
     if coCnt == 5:
         nm.carbs = nom
     if coCnt == 6:
         nm.fats = nom
+        end = True
     count = -1
     check = fo.read(i)
-'''
-# maybe make it a method of the food class
 
+# if check == *, then colonCount = 0 and it starts a new line by adding 1 to n in fo.seek
+# if check == #, then it has reached end of file and then it terminates.
+# maybe make it a method of the food class
 n = 40
 i = 1
+nom = None
 count = 0
 colonCount = 0
 end = False
@@ -64,111 +58,9 @@ while end == False:
     fo.seek(n-count, 0)
     check = fo.read(count)
     fo.seek(n+1, 0)
-    # assign(check, colonCount)
-    if colonCount == 1:
-        nm = str(check)
-        nm = food()
-        nm.name = str(check)
-        print(nm.name)
-        count = -1
-        check = fo.read(i)
-    if colonCount == 2:
-        nm.grams = int(check)
-        print(nm.grams)
-        count = -1
-        check = fo.read(i)
-    if colonCount == 3:
-        nm.cals = int(check)
-        count = -1
-        check = fo.read(i)
-    if colonCount == 4:
-        nm.pros = int(check)
-        count = -1
-        check = fo.read(i)
-    if colonCount == 5:
-        nm.carbs = int(check)
-        count = -1
-        check = fo.read(i)
-    if colonCount == 6:
-        nm.fats = int(check)
-        count = -1
-        check = fo.read(i)
+    assign(colonCount)
 
-'''
-    if colonCount == 1:
-        count = 0
-        fo.seek(n+1)
-        check = fo.read(i)
-        while check != ":":
-            check = fo.read(i)
-            n = n + 1
-            count = count + 1
-            fo.seek(n, 0)
-        if check == ":":
-            fo.seek(n - (count - 1) , 0)
-            check = fo.read(count - 2)
-            print(check)
-            colonCount = colonCount + 1
-            nm.grams = int(check)
 
-    if colonCount == 2:
-        count = 0
-        fo.seek(n + 1)
-        check = fo.read(i)
-        while check != ":":
-            check = fo.read(i)
-            n = n + 1
-            count = count + 1
-            fo.seek(n, 0)
-        if check == ":":
-            fo.seek(n - count, 0)
-            check = fo.read(count - 1)
-            print(check)
-            colonCount = colonCount + 1
-            nm.cals = int(check)
-
-    if colonCount == 3:
-        count = 0
-        fo.seek(n+1)
-        check = fo.read(i)
-        while check != ":":
-            check = fo.read(i)
-            n = n + 1
-            count = count + 1
-            fo.seek(n, 0)
-        if check == ":":
-            fo.seek(n - count, 0)
-            check = fo.read(count + 1)
-            print(check)
-            colonCount = colonCount + 1
-            end = True
-            break
-    # maybe call a function which can be run for all 5 if it is the same
-        # you want it to read the next digits and assign it to grams
-'''
-
-'''
-def digits(att, num):
-    global colonCount
-    if colonCount == num:
-        count = 0
-        fo.seek(n+1)
-        check = fo.read(i)
-        while check != ":":
-            check = fo.read(i)
-            n = n + 1
-            count = count + 1
-            fo.seek(n, 0)
-        if check == ":":
-            fo.seek(n - (count - 1) , 0)
-            check = fo.read(count - 2)
-            colonCount = colonCount + 1
-            nm.att = int(check)
-            
-digits("grams", 1)
-digits(calorie, 2)
-digits(protein, 3)
-'''
 fo.close()
 
 
