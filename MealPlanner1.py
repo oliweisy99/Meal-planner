@@ -34,8 +34,6 @@ def assign(coCnt):
     if coCnt == 6:
         nm.fats = nom
         print(nm.fats)
-    if coCnt == 7:
-        end = True
     count = -1
     check = fo.read(i)
 
@@ -64,8 +62,6 @@ while end == False:
             break
     if colonCount == 7:
         colonCount = 0
-        print("Count = ", count)
-        print("N =", n)
     else:
         fo.seek(n - count, 0)
         check = fo.read(count)
