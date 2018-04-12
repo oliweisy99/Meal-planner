@@ -1,46 +1,14 @@
 class food:
     def __init__(self):
-        self.name = ""
+        self.name = nom
         self.grams = 0
         self.cals = 0
         self.pros = 0
         self.carbs = 0
         self.fats = 0
       # self.attributes = []
-        
-def assign(coCnt):
-    global count, check, nm, end, nom, colonCount, n
-    if isinstance(check, str) == True :
-        nom = str(check)
-    else:
-        nom = int(check)
-    if coCnt == 1:
-        nm = nom
-        nm = food()
-        nm.name = nom
-        print(nm.name)
-    if coCnt == 2:
-        nm.grams = nom
-        print(nm.grams)
-    if coCnt == 3:
-        nm.cals = nom
-        print(nm.cals)
-    if coCnt == 4:
-        nm.pros = nom
-        print(nm.pros)
-    if coCnt == 5:
-        nm.carbs = nom
-        print(nm.carbs)
-    if coCnt == 6:
-        nm.fats = nom
-        print(nm.fats)
-    if coCnt == 7:
-        colonCount = 0
-        n = n - count
-    count = -1
-    check = fo.read(i)
 
-n = 40
+n = 41
 i = 1
 nom = None
 count = 0
@@ -50,22 +18,47 @@ nm = None
 check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
+
+def assign(coCnt):
+    global count, check, nm, end, nom, colonCount, n
+    if isinstance(check, str) == True :
+        nom = str(check)
+    else:
+        nom = int(check)
+    if coCnt == 1:
+        if check == "#":
+            end = True
+        nm = nom
+        nm = food()
+        nm.name = nom
+    if coCnt == 2:
+        nm.grams = nom
+    if coCnt == 3:
+        nm.cals = nom
+    if coCnt == 4:
+        nm.pros = nom
+    if coCnt == 5:
+        nm.carbs = nom
+    if coCnt == 6:
+        nm.fats = nom
+    if coCnt == 7:
+        colonCount = 0
+        n = n - count
+    count = -1
+    check = fo.read(i)
+
 while end == False:
-    while check != ":":
+    while check != ":" or check == "#":
         check = fo.read(i)
-        if check == ":":
+        if check == ":" or check == "#":
             colonCount = colonCount + 1
             break
         if check != ":" and check != "#":
             n = n + 1
             count = count + 1
             fo.seek(n,0)
-        if check == "#":
-            end = True
-            break
     fo.seek(n - count, 0)
     check = fo.read(count)
-    print(colonCount)
     fo.seek(n + 1, 0)
     assign(colonCount)
 fo.close()
