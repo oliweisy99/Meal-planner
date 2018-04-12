@@ -9,7 +9,7 @@ class food:
       # self.attributes = []
         
 def assign(coCnt):
-    global count, check, nm, end, nom, colonCount
+    global count, check, nm, end, nom, colonCount, n
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -34,6 +34,9 @@ def assign(coCnt):
     if coCnt == 6:
         nm.fats = nom
         print(nm.fats)
+    if coCnt == 7:
+        colonCount = 0
+        n = n - count
     count = -1
     check = fo.read(i)
 
@@ -60,14 +63,11 @@ while end == False:
         if check == "#":
             end = True
             break
-    if colonCount == 7:
-        colonCount = 0
-    else:
-        fo.seek(n - count, 0)
-        check = fo.read(count)
-        print(colonCount)
-        fo.seek(n + 1, 0)
-        assign(colonCount)
+    fo.seek(n - count, 0)
+    check = fo.read(count)
+    print(colonCount)
+    fo.seek(n + 1, 0)
+    assign(colonCount)
 fo.close()
 
 
