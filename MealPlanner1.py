@@ -12,19 +12,7 @@ class food:
         self.name = x
 
 '''
-steak = food()
-steak.name = ol
-nm = food
-nm = foood
-nm = food()
-nm cant equal more than one thing
-you have to have the word steak = food()
-then steak.name = steak
-
-what you could do is assign list = []
-list[1] = food()
-list[2] = food()
-
+do it like this:
 list = ["Steak", "Fish", "potato"]
 
 list[0] = food()
@@ -33,7 +21,14 @@ list[0].name = "steak"
 list[1].name = "fish"
 print(list[0].name)
 print(list[1].name)
+index = 0
+once line is finished in foods, then count increments
+list[index] = food()
+list[index].name = nom
+
 '''
+list = [0] * 50
+index = 0
 n = 41
 i = 1
 nom = None
@@ -46,7 +41,7 @@ fo = open("Foods", "r+")
 fo.seek(n, 0)
 
 def assign(coCnt):
-    global count, check, nm, end, nom, colonCount, n
+    global count, check, nm, end, nom, colonCount, n, index, list
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -70,6 +65,7 @@ def assign(coCnt):
     if coCnt == 7:
         colonCount = 0
         n = n - count
+        index = index + 1
     count = -1
     check = fo.read(i)
 
