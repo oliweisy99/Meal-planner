@@ -9,10 +9,16 @@ class food:
       # self.attributes = []
 
 nom = "steak"
+nim = "fish"
 
 list = [0] * 50
 list[0] = food()
+list[1] = food()
 list[0].name = nom
 list[0].grams = 100
+list[1].name = nim
+list[1].grams = 140
 print(list[0].name)
 print(list[0].grams)
+print(list[1].name)
+print(list[1].grams)

@@ -1,3 +1,6 @@
+#MEAL PLANNER
+
+# food super class
 class food:
     def __init__(self):
         self.name = ""
@@ -8,25 +11,7 @@ class food:
         self.fats = 0
       # self.attributes = []
 
-    def assignName(self, x):
-        self.name = x
-
-'''
-do it like this:
-list = ["Steak", "Fish", "potato"]
-
-list[0] = food()
-list[1] = food()
-list[0].name = "steak"
-list[1].name = "fish"
-print(list[0].name)
-print(list[1].name)
-index = 0
-once line is finished in foods, then count increments
-list[index] = food()
-list[index].name = nom
-
-'''
+# variables for text file assignments
 list = [0] * 50
 index = 0
 n = 41
@@ -40,6 +25,7 @@ check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
 
+# text file assignement to class function
 def assign(coCnt):
     global count, check, nm, end, nom, colonCount, n, index, list
     if isinstance(check, str) == True :
@@ -49,19 +35,19 @@ def assign(coCnt):
     if coCnt == 1:
         if check == "#":
             end = True
-        nm = nom
-        nm = food()
-        nm.assignName(nom)
+        else:
+            list[index] = food()
+            list[index].name = nom
     if coCnt == 2:
-        nm.grams = nom
+        list[index].grams = nom
     if coCnt == 3:
-        nm.cals = nom
+        list[index].cals = nom
     if coCnt == 4:
-        nm.pros = nom
+        list[index].pros = nom
     if coCnt == 5:
-        nm.carbs = nom
+        list[index].carbs = nom
     if coCnt == 6:
-        nm.fats = nom
+        list[index].fats = nom
     if coCnt == 7:
         colonCount = 0
         n = n - count
@@ -69,6 +55,7 @@ def assign(coCnt):
     count = -1
     check = fo.read(i)
 
+# text file reader loop
 while end == False:
     while check != ":" or check == "#":
         check = fo.read(i)
@@ -83,6 +70,7 @@ while end == False:
     check = fo.read(count)
     fo.seek(n + 1, 0)
     assign(colonCount)
+
 fo.close()
 
 
@@ -90,10 +78,6 @@ userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
-
-'''
-https://www.tutorialspoint.com/python/python_files_io.htm 
-'''
 
 class fish:
     def __init__(self):
