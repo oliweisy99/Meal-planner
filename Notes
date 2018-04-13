@@ -1,3 +1,27 @@
+class member():
+    def __init__(self):
+        Sand = "." # sand is a constant, that is why it doesnt have "self"
+        self.__grid = [[Sand for j in range(30)] for i in range(10)]
+        self.__mn = ""
+        self.__mid = ""
+        self.__sp = False
+    def setMn(self, mem):
+        self.mn = mem
+    def setMID(self, id):
+        self.mid = id
+    def setSP(self,paid):
+        self.sp = paid
+
+class junior(member):
+    def __init__(self):
+        super().__init__()
+        self.DOB = ""
+    def SetMN(self, memn):
+        super().setMn(memn)
+    def setMID(self, id):
+        super().setMID(id)
+    def setSP(self, paid):
+        super().setSP(paid)
 
 # OOP 1
 class person:

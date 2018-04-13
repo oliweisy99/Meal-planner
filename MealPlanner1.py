@@ -1,6 +1,6 @@
 class food:
     def __init__(self):
-        self.name = nom
+        self.name = ""
         self.grams = 0
         self.cals = 0
         self.pros = 0
@@ -8,6 +8,32 @@ class food:
         self.fats = 0
       # self.attributes = []
 
+    def assignName(self, x):
+        self.name = x
+
+'''
+steak = food()
+steak.name = ol
+nm = food
+nm = foood
+nm = food()
+nm cant equal more than one thing
+you have to have the word steak = food()
+then steak.name = steak
+
+what you could do is assign list = []
+list[1] = food()
+list[2] = food()
+
+list = ["Steak", "Fish", "potato"]
+
+list[0] = food()
+list[1] = food()
+list[0].name = "steak"
+list[1].name = "fish"
+print(list[0].name)
+print(list[1].name)
+'''
 n = 41
 i = 1
 nom = None
@@ -30,7 +56,7 @@ def assign(coCnt):
             end = True
         nm = nom
         nm = food()
-        nm.name = nom
+        nm.assignName(nom)
     if coCnt == 2:
         nm.grams = nom
     if coCnt == 3:
