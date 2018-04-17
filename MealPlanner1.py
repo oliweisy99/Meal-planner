@@ -25,7 +25,7 @@ check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
 
-# text file assignement to class function
+# text file assignment to class function
 def assign(coCnt):
     global count, check, nm, end, nom, colonCount, n, index, list
     if isinstance(check, str) == True :
@@ -189,6 +189,8 @@ for z in range(0,20):
 for index in range(1,6):
     print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
 '''
+all this is initially for yourself, then when you have it working the way you want, start adding customers
+
 - make sure maths works with more than 3 foods
 
 - make the code better and more accurate to get results faster: 
