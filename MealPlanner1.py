@@ -104,9 +104,12 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
+
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
 potatoMulti = userCarb / potato().carbs #9.266667
+
+# these aren't the values calculated, they are just selected from previously done calculations
 
 steakCal = steak().calories * steakMulti
 steakPro = steak().protein * steakMulti
@@ -124,7 +127,10 @@ potatoCarbs = potato().carbs * potatoMulti
 potatoFat = potato().fat * potatoMulti
 
 '''
-sort this out to work with multiple foods
+Next thing to do is to get all food from classes, using excel spreadsheet maths
+and then create the meals. 
+
+
 '''
 
 
