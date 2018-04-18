@@ -73,7 +73,6 @@ while end == False:
 
 fo.close()
 
-
 userCal = float(input("Whats your calories requirements?"))
 userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
@@ -104,6 +103,8 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
+multiList = [0] * 50
+
 
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
@@ -127,9 +128,12 @@ potatoCarbs = potato().carbs * potatoMulti
 potatoFat = potato().fat * potatoMulti
 
 '''
+
+we could just have lists for each one have the lists are part of classes
+as each one can be repeated. just need the multiplier. 
+
 Next thing to do is to get all food from classes, using excel spreadsheet maths
 and then create the meals. 
-
 
 '''
 
