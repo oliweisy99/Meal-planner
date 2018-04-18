@@ -12,7 +12,7 @@ class food:
       # self.attributes = []
 
 # variables for text file assignments
-list = [0] * 50
+foodList = [0] * 50
 index = 0
 n = 41
 i = 1
@@ -36,18 +36,18 @@ def assign(coCnt):
         if check == "#":
             end = True
         else:
-            list[index] = food()
-            list[index].name = nom
+            foodList[index] = food()
+            foodList[index].name = nom
     if coCnt == 2:
-        list[index].grams = nom
+        foodList[index].grams = nom
     if coCnt == 3:
-        list[index].cals = nom
+        foodList[index].cals = nom
     if coCnt == 4:
-        list[index].pros = nom
+        foodList[index].pros = nom
     if coCnt == 5:
-        list[index].carbs = nom
+        foodList[index].carbs = nom
     if coCnt == 6:
-        list[index].fats = nom
+        foodList[index].fats = nom
     if coCnt == 7:
         colonCount = 0
         n = n - count
