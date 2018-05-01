@@ -102,9 +102,24 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
-tempList = [0] * 10 # used to find smallest value for mulitiList
+tempList = [0] * 5 # used to find smallest value for mulitiList
 multiList = [0] * 50 # multiplier list for each food
 X = [[0 for i in range(10)] for j in range(10)]
+
+i = 0
+tempList[0] = userCal / foodList[i].cals
+tempList[1] = userPro / foodList[i].pros
+tempList[2] = userCarb / foodList[i].carbs
+tempList[3] = userFat / foodList[i].fats
+
+for index in range(len(tempList)): # to go through each value in the array
+    insertItem = tempList[index] # stores value which gets replaced
+    currentitem = index - 1
+    while tempList[currentitem] > insertItem and currentitem > 0: # going through individual value compared to other values
+        tempList[currentitem + 1] = tempList[currentitem]
+        currentitem = currentitem - 1
+        print(tempList)
+    tempList[currentitem + 1] = insertItem
 
 '''
 we are going to need to calculate the smallest multiplier for each food
