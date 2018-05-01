@@ -102,7 +102,9 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
+tempList = [0] * 10 # used to find smallest value for mulitiList
 multiList = [0] * 50 # multiplier list for each food
+X = [[0 for i in range(10)] for j in range(10)]
 
 '''
 we are going to need to calculate the smallest multiplier for each food
@@ -118,10 +120,19 @@ test[3] = userfat / foodList[i].fats
 
 then take smallest value from those, and put it into new array
 multipliers[i] the smallest value from test[] and i represents the food number as well from foodList[i]
+could rearrange it then assign smallest to mulitplier[i]
 
 so now we have the multiplier, for each food.
 now there is the other things we need to work out 
 which is the food cals/pros etc. * food multiplier
+could use a 2d array and each row is the food. 
+and run everything through a loop when letters get incremented until something. 
+X[n][i] = multiplier[i] * foodList[i].cals
+X[n][i] = multiplier[i] * foodList[i].pros
+X[n][i] = multiplier[i] * foodList[i].carbs
+X[n][i] = multiplier[i] * foodList[i].fats
+where n is being looped for the next food as well so it can go in the next column
+the X 2d array contains the digits which get multiplied and added with the ratios
 
 
 '''
