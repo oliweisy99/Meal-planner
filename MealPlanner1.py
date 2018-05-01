@@ -107,10 +107,10 @@ multiList = [0] * 50 # multiplier list for each food
 X = [[0 for i in range(10)] for j in range(10)]
 
 i = 0
-tempList[0] = userCal / foodList[i].cals
-tempList[1] = userPro / foodList[i].pros
-tempList[2] = userCarb / foodList[i].carbs
-tempList[3] = userFat / foodList[i].fats
+tempList[1] = float(userCal / int(foodList[i].cals))
+tempList[2] = float(userPro / int(foodList[i].pros))
+tempList[3] = float(userCarb / int(foodList[i].carbs))
+tempList[4] = float(userFat / int(foodList[i].fats))
 
 for index in range(len(tempList)): # to go through each value in the array
     insertItem = tempList[index] # stores value which gets replaced
@@ -118,9 +118,10 @@ for index in range(len(tempList)): # to go through each value in the array
     while tempList[currentitem] > insertItem and currentitem > 0: # going through individual value compared to other values
         tempList[currentitem + 1] = tempList[currentitem]
         currentitem = currentitem - 1
-        print(tempList)
     tempList[currentitem + 1] = insertItem
 
+multiList[i] = tempList[i+1]
+print(multiList[i])
 '''
 we are going to need to calculate the smallest multiplier for each food
 with the users inputs
