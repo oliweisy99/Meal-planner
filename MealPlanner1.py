@@ -94,7 +94,6 @@ class steak:
         self.fat = 15
         self.carbs = 25
 
-
 class potato:
     def __init__(self):
         self.grams = 100
@@ -103,8 +102,29 @@ class potato:
         self.fat = 5
         self.carbs = 30
 
-multiList = [0] * 50
+multiList = [0] * 50 # multiplier list for each food
 
+'''
+we are going to need to calculate the smallest multiplier for each food
+with the users inputs
+
+might have to have multiple lists or a class with two different lists in it
+whatever is easier
+
+Test[0] = userCal / foodList[i].cals
+test[1] = userPro / foodList[i].pros
+test[2] = usercarb / foodList[i].carbs
+test[3] = userfat / foodList[i].fats
+
+then take smallest value from those, and put it into new array
+multipliers[i] the smallest value from test[] and i represents the food number as well from foodList[i]
+
+so now we have the multiplier, for each food.
+now there is the other things we need to work out 
+which is the food cals/pros etc. * food multiplier
+
+
+'''
 
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
@@ -134,6 +154,9 @@ as each one can be repeated. just need the multiplier.
 
 Next thing to do is to get all food from classes, using excel spreadsheet maths
 and then create the meals. 
+
+once we have the all the information stored like it is above, then
+we can start adding in more foods, making smarter meals etc. 
 
 '''
 
