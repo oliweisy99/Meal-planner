@@ -120,8 +120,8 @@ for index in range(len(tempList)): # to go through each value in the array
         currentitem = currentitem - 1
     tempList[currentitem + 1] = insertItem
 
-multiList[i] = tempList[i+1]
-print(multiList[i])
+multiList[i] = tempList[1]
+
 '''
 we are going to need to calculate the smallest multiplier for each food
 with the users inputs
