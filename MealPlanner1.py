@@ -78,30 +78,6 @@ userPro = float(input("Whats your protein requirements?"))
 userCarb = float(input("Whats your carb requirements?"))
 userFat = float(input("Whats your fat requirements?"))
 
-class fish:
-    def __init__(self):
-        self.grams = 100
-        self.calories = 125
-        self.protein = 40
-        self.fat = 10
-        self.carbs = 20
-
-class steak:
-    def __init__(self):
-        self.grams = 100
-        self.calories = 150
-        self.protein = 35
-        self.fat = 15
-        self.carbs = 25
-
-class potato:
-    def __init__(self):
-        self.grams = 100
-        self.calories = 90
-        self.protein = 10
-        self.fat = 5
-        self.carbs = 30
-
 tempList = [0] * 5 # used to find smallest value for mulitiList
 multiList = [0] * 50 # multiplier list for each food
 X = [[0.00 for i in range(10)] for j in range(10)]
@@ -127,38 +103,13 @@ for i in range(0,3): # the number 3 needs to be a variable which will be determi
     X[n+1][i] = multiList[i] * float(foodList[i].pros)
     X[n+2][i] = multiList[i] * float(foodList[i].carbs)
     X[n+3][i] = multiList[i] * float(foodList[i].fats)
-
-print(X[0][0])#cals
-print(X[1][0])#pros
-print(X[2][0])#carbs
-print(X[3][0])#fats
-print(X[0][1])#next food
-print(X[1][1])
-print(X[2][1])
-print(X[3][1])
-
-
-steakMulti = userFat / steak().fat #4.6
-fishMulti = userPro / fish().protein #4.625
-potatoMulti = userCarb / potato().carbs #9.266667
-
-# these aren't the values calculated, they are just selected from previously done calculations
-
-steakCal = steak().calories * steakMulti
-steakPro = steak().protein * steakMulti
-steakCarbs = steak().carbs * steakMulti
-steakFat = steak().fat * steakMulti
-
-fishCal = fish().calories * fishMulti
-fishPro = fish().protein * fishMulti
-fishCarbs = fish().carbs * fishMulti
-fishFat = fish().fat * fishMulti
-
-potatoCal = potato().calories * potatoMulti
-potatoPro = potato().protein * potatoMulti
-potatoCarbs = potato().carbs * potatoMulti
-potatoFat = potato().fat * potatoMulti
-
+'''
+print(X[0][0]) ~ first food + cals
+print(X[1][0]) ~ pros
+print(X[2][0]) ~ carbs
+print(X[3][0]) ~ fats
+print(X[0][1]) ~ next food + cals
+'''
 
 class number:
     def __init__(self):
@@ -178,12 +129,16 @@ orderArr = [0, 1000, 1000, 1000, 1000, 1000]
 for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
-
+            '''
+            check maths is alright before continuing
+            next thing to do after checking maths is test it with multiple foods
+            then make calculations faster + more efficient etc.
+            '''
             # working out difference
-            calDif = userCal - ((one * steakCal) + (two * fishCal) + (three * potatoCal))
-            proDif = userPro - ((one * steakPro) + (two * fishPro) + (three * potatoPro))
-            carbDif = userCarb - ((one * steakCarbs) + (two * fishCarbs) + (three * potatoCarbs))
-            fatDif = userFat - ((one * steakFat) + (two * fishFat) + (three * potatoFat))
+            calDif = userCal - ((one * X[0][0]) + (two * X[0][1]) + (three * X[0][2]))
+            proDif = userPro - ((one * X[1][0]) + (two * X[1][1]) + (three * X[1][2]))
+            carbDif = userCarb - ((one * X[2][0]) + (two * X[2][1]) + (three * X[2][2]))
+            fatDif = userFat - ((one * X[3][0]) + (two * X[3][1]) + (three * X[3][2]))
             totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
 
             if y == 0.1 and x < 6:
