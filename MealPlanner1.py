@@ -132,7 +132,7 @@ print(X[0][0])#cals
 print(X[1][0])#pros
 print(X[2][0])#carbs
 print(X[3][0])#fats
-print(X[0][1])
+print(X[0][1])#next food
 print(X[1][1])
 print(X[2][1])
 print(X[3][1])
@@ -158,19 +158,6 @@ potatoCal = potato().calories * potatoMulti
 potatoPro = potato().protein * potatoMulti
 potatoCarbs = potato().carbs * potatoMulti
 potatoFat = potato().fat * potatoMulti
-
-'''
-
-we could just have lists for each one have the lists are part of classes
-as each one can be repeated. just need the multiplier. 
-
-Next thing to do is to get all food from classes, using excel spreadsheet maths
-and then create the meals. 
-
-once we have the all the information stored like it is above, then
-we can start adding in more foods, making smarter meals etc. 
-
-'''
 
 
 class number:
