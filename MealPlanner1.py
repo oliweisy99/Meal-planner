@@ -128,31 +128,15 @@ for i in range(0,3): # the number 3 needs to be a variable which will be determi
     X[n+2][i] = multiList[i] * float(foodList[i].carbs)
     X[n+3][i] = multiList[i] * float(foodList[i].fats)
 
-print(X[0][0])
-print(X[1][0])
-print(X[2][0])
-print(X[3][0])
+print(X[0][0])#cals
+print(X[1][0])#pros
+print(X[2][0])#carbs
+print(X[3][0])#fats
 print(X[0][1])
 print(X[1][1])
 print(X[2][1])
 print(X[3][1])
 
-
-'''
-so now we have the multiplier, for each food.
-now there is the other things we need to work out 
-which is the food cals/pros etc. * food multiplier
-could use a 2d array and each row is the food. 
-and run everything through a loop when letters get incremented until something. 
-X[n][i] = multiplier[i] * foodList[i].cals
-X[n][i] = multiplier[i] * foodList[i].pros
-X[n][i] = multiplier[i] * foodList[i].carbs
-X[n][i] = multiplier[i] * foodList[i].fats
-where n is being looped for the next food as well so it can go in the next column
-the X 2d array contains the digits which get multiplied and added with the ratios
-
-
-'''
 
 steakMulti = userFat / steak().fat #4.6
 fishMulti = userPro / fish().protein #4.625
