@@ -130,8 +130,7 @@ for z in range(0,20):
     for y in range(0,20):
         for x in range(0,20):
             '''
-            check maths is alright before continuing
-            next thing to do after checking maths is test it with multiple foods
+            next thing to do after checking maths is test it with and make it work multiple foods
             then make calculations faster + more efficient etc.
             '''
             # working out difference
