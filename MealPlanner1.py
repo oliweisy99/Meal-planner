@@ -83,8 +83,9 @@ multiList = [0] * 50 # multiplier list for each food
 X = [[0.00 for i in range(10)] for j in range(10)]
 i = 0
 n = 0
-for i in range(0,3): # the number 3 needs to be a variable which will be determined based on the meal being created
+for i in range(0,4): # the number 3 needs to be a variable which will be determined based on the meal being created
 # but for now just to test, it remains 3 as there are 3 test foods
+
     tempList[1] = float(userCal / int(foodList[i].cals))
     tempList[2] = float(userPro / int(foodList[i].pros))
     tempList[3] = float(userCarb / int(foodList[i].carbs))
@@ -103,6 +104,7 @@ for i in range(0,3): # the number 3 needs to be a variable which will be determi
     X[n+1][i] = multiList[i] * float(foodList[i].pros)
     X[n+2][i] = multiList[i] * float(foodList[i].carbs)
     X[n+3][i] = multiList[i] * float(foodList[i].fats)
+
 '''
 print(X[0][0]) ~ first food + cals
 print(X[1][0]) ~ pros
@@ -111,63 +113,80 @@ print(X[3][0]) ~ fats
 print(X[0][1]) ~ next food + cals
 '''
 
+
+'''
+forget all about below
+what are we trying to accomplish?
+calculate with multiple foods to reach requirements
+the whole program made was to test for 3 foods.
+we need to create one which is going to be for multiple foods
+'''
+for i in range(0,4):
+    print(multiList[i])
+
 class number:
     def __init__(self):
         self.on = 0
         self.tw = 0
         self.thre = 0
+        self.fur = 0
 
 myList = [number() for index in range(0,7)]
 
 one = 0.1
 two = 0.1
 three = 0.1
+four = 0.1
 holder = None
 count = 0
 orderArr = [0, 1000, 1000, 1000, 1000, 1000]
+for w in range(0,20):
+    for z in range(0,20):
+        for y in range(0,20):
+            for x in range(0,20):
+                '''
+                test it with and make it work multiple foods
+                then make calculations faster + more efficient etc.
+                '''
+                # working out difference
+                calDif = userCal - ((one * X[0][0]) + (two * X[0][1]) + (three * X[0][2])) + (four * X[0][3])
+                proDif = userPro - ((one * X[1][0]) + (two * X[1][1]) + (three * X[1][2])) + (four * X[1][3])
+                carbDif = userCarb - ((one * X[2][0]) + (two * X[2][1]) + (three * X[2][2])) + (four * X[2][3])
+                fatDif = userFat - ((one * X[3][0]) + (two * X[3][1]) + (three * X[3][2])) + (four * X[3][3])
+                totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
 
-for z in range(0,20):
-    for y in range(0,20):
-        for x in range(0,20):
-            '''
-            next thing to do after checking maths is test it with and make it work multiple foods
-            then make calculations faster + more efficient etc.
-            '''
-            # working out difference
-            calDif = userCal - ((one * X[0][0]) + (two * X[0][1]) + (three * X[0][2]))
-            proDif = userPro - ((one * X[1][0]) + (two * X[1][1]) + (three * X[1][2]))
-            carbDif = userCarb - ((one * X[2][0]) + (two * X[2][1]) + (three * X[2][2]))
-            fatDif = userFat - ((one * X[3][0]) + (two * X[3][1]) + (three * X[3][2]))
-            totalDif = abs(calDif) + abs(proDif) + abs(carbDif) + abs(fatDif)
+                if y == 0.1 and x < 6:
+                    orderArr[x] = totalDif
+                if orderArr[0] > totalDif :
+                    orderArr[0] = totalDif
 
-            if y == 0.1 and x < 6:
-                orderArr[x] = totalDif
-            if orderArr[0] > totalDif :
-                orderArr[0] = totalDif
+                for index in range(1,6):
+                    if orderArr[index] > totalDif:
+                        count += 1
+                        holder = orderArr[index]
+                        orderArr[index] = totalDif
+                        orderArr[index - 1] = holder
 
-            for index in range(1,6):
-                if orderArr[index] > totalDif:
-                    count += 1
-                    holder = orderArr[index]
-                    orderArr[index] = totalDif
-                    orderArr[index - 1] = holder
+                myList[count].on = one
+                myList[count].tw = two
+                myList[count].thre = three
+                myList[count].fur = four
+                count = 0
 
-            myList[count].on = one
-            myList[count].tw = two
-            myList[count].thre = three
-            count = 0
-
-            # moving up numbers
-            three = three + 0.1
-            if three > 2.1:
-                two = two + 0.1
-                three = three - 2.0
-            if two > 2.1 :
-                one = one + 0.1
-                two = two - 2.0
+                # moving up numbers
+                four = four + 0.1
+                if four > 2.1:
+                    three = three + 0.1
+                    four = four - 2.0
+                if three > 2.1:
+                    two = two + 0.1
+                    three = three - 2.0
+                if two > 2.1 :
+                    one = one + 0.1
+                    two = two - 2.0
 
 for index in range(1,6):
-    print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre)
+    print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre, " : ", "%.1f" % myList[index].fur)
 '''
 all this is initially for yourself, then when you have it working the way you want, start adding customers
 
