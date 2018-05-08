@@ -91,6 +91,7 @@ for i in range(0,4): # the number 3 needs to be a variable which will be determi
     tempList[3] = float(userCarb / int(foodList[i].carbs))
     tempList[4] = float(userFat / int(foodList[i].fats))
 
+# insertion sort:
     for index in range(len(tempList)): # to go through each value in the array
         insertItem = tempList[index] # stores value which gets replaced
         currentitem = index - 1
@@ -145,7 +146,7 @@ for w in range(0,20):
         for y in range(0,20):
             for x in range(0,20):
                 '''
-                test it with and make it work multiple foods
+                make it work 
                 then make calculations faster + more efficient etc.
                 '''
                 # working out difference
