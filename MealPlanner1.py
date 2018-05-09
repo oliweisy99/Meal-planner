@@ -9,7 +9,8 @@ class food:
         self.pros = 0
         self.carbs = 0
         self.fats = 0
-      # self.attributes = []
+      # self.tags = []
+      # self.price = 0
 
 # variables for text file assignments
 foodList = [0] * 50
@@ -112,15 +113,20 @@ print(X[1][0]) ~ pros
 print(X[2][0]) ~ carbs
 print(X[3][0]) ~ fats
 print(X[0][1]) ~ next food + cals
-'''
 
 
-'''
 forget all about below
 what are we trying to accomplish?
 calculate with multiple foods to reach requirements
 the whole program made was to test for 3 foods.
 we need to create one which is going to be for multiple foods
+
+lets start with callig tags then add in more requirements 
+then workout procedures or functions to make meals
+how it could work:
+call looops every food with tag X
+then add numbers (0.1)s for every food - could be an Array just filled with (0.1)s that reset or are used in algorithm
+
 '''
 for i in range(0,4):
     print(multiList[i])
