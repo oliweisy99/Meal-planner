@@ -9,7 +9,7 @@ class food:
         self.pros = 0
         self.carbs = 0
         self.fats = 0
-      # self.tags = []
+        self.tags = []
       # self.price = 0
 
 # variables for text file assignments
@@ -108,12 +108,12 @@ for i in range(0,4): # the number 3 needs to be a variable which will be determi
     X[n+3][i] = multiList[i] * float(foodList[i].fats)
 
 '''
+
 print(X[0][0]) ~ first food + cals
 print(X[1][0]) ~ pros
 print(X[2][0]) ~ carbs
 print(X[3][0]) ~ fats
 print(X[0][1]) ~ next food + cals
-
 
 forget all about below
 what are we trying to accomplish?
@@ -121,11 +121,19 @@ calculate with multiple foods to reach requirements
 the whole program made was to test for 3 foods.
 we need to create one which is going to be for multiple foods
 
-lets start with callig tags then add in more requirements 
+lets start with calling tags then add in more requirements 
 then workout procedures or functions to make meals
 how it could work:
-call looops every food with tag X
+call loops every food with tag X
 then add numbers (0.1)s for every food - could be an Array just filled with (0.1)s that reset or are used in algorithm
+
+create three different meals: Breakfast, lunch and dinner
+for each one you, want to split requirements through each one, then when calculations are made, it re-evaluates it to get as close as possible
+or compares across all of them and gets as close as possible for each meal using top 5 closest for each meal then and calculations to get as close as possible
+each one is an individual meal calculated, then when it is finished, it moves on to the next set.
+you could then have input from the user to decide what needs to be made: lunch, dinner, breakfast, snacks, gluten free etc. and
+essentially they act as tags 
+could use multi-threading to speed up the calculation process. 
 
 '''
 for i in range(0,4):
