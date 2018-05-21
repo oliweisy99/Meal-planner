@@ -15,7 +15,7 @@ class food:
 # variables for text file assignments
 foodList = [0] * 50
 index = 0
-n = 41
+n = 47
 i = 1
 nom = None
 count = 0
@@ -55,6 +55,11 @@ def assign(coCnt):
         index = index + 1
     count = -1
     check = fo.read(i)
+
+'''
+we want to go inside the brackets and read the word, then assign it to array
+then if there is another one, add it to the next part in the array of the class object
+'''
 
 # text file reader loop
 while end == False:
@@ -135,6 +140,10 @@ you could then have input from the user to decide what needs to be made: lunch, 
 essentially they act as tags 
 could use multi-threading to speed up the calculation process. 
 
+first step: create tags and add them to a list within the class so they can be accessed.
+next, will be to make meals including the tags
+then to calculate based on tags. 
+
 '''
 for i in range(0,4):
     print(multiList[i])
@@ -159,10 +168,7 @@ for w in range(0,20):
     for z in range(0,20):
         for y in range(0,20):
             for x in range(0,20):
-                '''
-                make it work 
-                then make calculations faster + more efficient etc.
-                '''
+
                 # working out difference
                 calDif = userCal - ((one * X[0][0]) + (two * X[0][1]) + (three * X[0][2])) + (four * X[0][3])
                 proDif = userPro - ((one * X[1][0]) + (two * X[1][1]) + (three * X[1][2])) + (four * X[1][3])
@@ -202,7 +208,9 @@ for w in range(0,20):
 
 for index in range(1,6):
     print("%.2f" % orderArr[index], " : ","%.1f" %  myList[index].on, " : ", "%.1f" % myList[index].tw, " : ", "%.1f" % myList[index].thre, " : ", "%.1f" % myList[index].fur)
+
 '''
+
 all this is initially for yourself, then when you have it working the way you want, start adding customers
 
 - make sure maths works with more than 3 foods
@@ -227,5 +235,6 @@ once you have the code to generate the best variations, now you can start making
 price, needs, aims and start adding in foods from websites to get it done. 
 then you can start adding more features whilst learning website development 
 then you start getting the business side of it sorted so meals can be shopped, made and delivered
+
 '''
 
