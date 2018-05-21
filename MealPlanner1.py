@@ -51,7 +51,7 @@ def assign(coCnt):
         foodList[index].fats = nom
     if coCnt == 7:
         '''
-        run while loop:
+        while fo.read(variable) != "]":
         if fo.read(i+1) where it is only reading one character == "[" and fo.read(whatever) != "]":
             assign = fo.read(read next 4 characters after)
             foodlist[index].tags[countvar] = assign
@@ -235,7 +235,6 @@ for index in range(1,6):
 
 all this is initially for yourself, then when you have it working the way you want, start adding customers
 
-- make sure maths works with more than 3 foods
 
 - make the code better and more accurate to get results faster: 
 procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
@@ -246,9 +245,25 @@ and also to be able to completely create and calculate a new meal plan if and wh
 make 3 different meals based on the foods to get really close amounts. 
 
 - have it so it displays the amount of each food that is needed to get close to requirements
-# we can have variables for each food [PRIM, MEAT, SOIL, TAST, SIDE, SUCE ETC.]
+# we can have variables for each food [PRIM, MEAT, SOIL, TAST, SIDE, SUCE, PROT, SAND, CERL  ETC.]
 # PRIM = primary food, made for dinners / main courses 
 # SIDE = side dish that go with PRIMs
+# BREK = breakfast
+# LNCH = lunch
+# DINR = dinner
+# PRTN = protein 
+# HCRB = high carbohydrates
+# CERL = cereal
+# SWCH = sandwich
+# BRED = bread
+# MEAT = meat
+thigns which have lots of different types or variations
+e.g. different types of meats, different ingredients in cereal, different styles of bread
+all of which will have different price ranges so can fit customers requirements
+so some peices of meat or bread will be cheaper and lower quality, and some will be more expensive but higher quality
+and algorithm just swaps and changes lower to higher quality ingredients, then chef makes it look nice
+but there will be different meals, e.g. salads, sandwiches, main courses, sides, soups, snacks etc. 
+etc.
 
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
 different meals - sandwiches, salads, meat meals, cereals etc.
