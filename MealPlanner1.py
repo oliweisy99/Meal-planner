@@ -9,7 +9,7 @@ class food:
         self.pros = 0
         self.carbs = 0
         self.fats = 0
-        self.tags = []
+        self.tags = [" " for i in range(0,15)]
       # self.price = 0
 
 # variables for text file assignments
@@ -50,6 +50,27 @@ def assign(coCnt):
     if coCnt == 6:
         foodList[index].fats = nom
     if coCnt == 7:
+        '''
+        run while loop:
+        if fo.read(i+1) where it is only reading one character == "[" and fo.read(whatever) != "]":
+            assign = fo.read(read next 4 characters after)
+            foodlist[index].tags[countvar] = assign
+            if fo.read(amount after tag of 4 chars) == ","
+                increment count variable and continue
+            elif fo.read(whatever) ==  "]":
+                colonCount = 0
+                n = n - count
+                index = index + 1
+        loop until fo.read(wtever) == "]"
+        then finish 
+                
+        as it is going to be 4 letters, it can just read the next for letters.
+        it can do an if statement to see if there are multiple tags
+        Read "[" then whatever 4 letters come after assign to first part of array
+        then using an if statement, if there is a ",", repeat process but in next part of array using a while loop to increment
+        then when "]" is read act like it is the end of a colon
+        it will be easy to implement pricing as well
+        '''
         colonCount = 0
         n = n - count
         index = index + 1
@@ -111,6 +132,7 @@ for i in range(0,4): # the number 3 needs to be a variable which will be determi
     X[n+1][i] = multiList[i] * float(foodList[i].pros)
     X[n+2][i] = multiList[i] * float(foodList[i].carbs)
     X[n+3][i] = multiList[i] * float(foodList[i].fats)
+
 
 '''
 
