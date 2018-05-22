@@ -257,12 +257,12 @@ make 3 different meals based on the foods to get really close amounts.
 # SWCH = sandwich
 # BRED = bread
 # MEAT = meat
-thigns which have lots of different types or variations
+things which have lots of different types or variations
 e.g. different types of meats, different ingredients in cereal, different styles of bread
 all of which will have different price ranges so can fit customers requirements
 so some peices of meat or bread will be cheaper and lower quality, and some will be more expensive but higher quality
 and algorithm just swaps and changes lower to higher quality ingredients, then chef makes it look nice
-but there will be different meals, e.g. salads, sandwiches, main courses, sides, soups, snacks etc. 
+but there will also be different meals, e.g. salads, sandwiches, main courses, sides, soups, snacks etc. 
 etc.
 
 start making good meals based on variations and categories etc so all is needed is just switching of foods into 
