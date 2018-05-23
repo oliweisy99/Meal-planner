@@ -25,10 +25,12 @@ nm = None
 check = None
 fo = open("Foods", "r+")
 fo.seek(n, 0)
+incre = 0
+bool = True
 
 # text file assignment to class function
 def assign(coCnt):
-    global count, check, nm, end, nom, colonCount, n, index, list
+    global count, check, nm, end, nom, colonCount, n, index, list, incre, bool
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -50,27 +52,20 @@ def assign(coCnt):
     if coCnt == 6:
         foodList[index].fats = nom
     if coCnt == 7:
-        '''
-        while fo.read(variable) != "]":
-        if fo.read(i+1) where it is only reading one character == "[" and fo.read(whatever) != "]":
-            assign = fo.read(read next 4 characters after)
-            foodlist[index].tags[countvar] = assign
-            if fo.read(amount after tag of 4 chars) == ","
-                increment count variable and continue
-            elif fo.read(whatever) ==  "]":
-                colonCount = 0
-                n = n - count
-                index = index + 1
-        loop until fo.read(wtever) == "]"
-        then finish 
-                
-        as it is going to be 4 letters, it can just read the next for letters.
-        it can do an if statement to see if there are multiple tags
-        Read "[" then whatever 4 letters come after assign to first part of array
-        then using an if statement, if there is a ",", repeat process but in next part of array using a while loop to increment
-        then when "]" is read act like it is the end of a colon
-        it will be easy to implement pricing as well
-        '''
+
+        if check == "[":
+            while bool == True:
+                fo.seek(n + 1)
+                foodList[index].tags[incre] = fo.read(4)
+                n = n + 5
+                fo.seek(n)
+                if fo.read(1) == ",":
+                    incre = incre + 1
+                    continue
+                else:
+                    bool = False
+                    break
+        print(n)
         colonCount = 0
         n = n - count
         index = index + 1
