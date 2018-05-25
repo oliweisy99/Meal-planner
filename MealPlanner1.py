@@ -52,21 +52,33 @@ def assign(coCnt):
     if coCnt == 6:
         foodList[index].fats = nom
     if coCnt == 7:
-
-        if check == "[":
-            while bool == True:
-                fo.seek(n + 1)
-                foodList[index].tags[incre] = fo.read(4)
-                n = n + 5
-                fo.seek(n)
-                if fo.read(1) == ",":
-                    incre = incre + 1
-                    continue
-                else:
-                    bool = False
-                    break
-        print(n)
+        '''
+        while bool == True:
+            n = n + (count - 3)
+            fo.seek(n+1)
+            print(fo.read(4))
+            foodList[index].tags[incre] = fo.read(4)
+            #print(foodList[index].tags[incre])
+            n = n + 5
+            fo.seek(n)
+            if fo.read(1) == ",":
+                incre = incre + 1
+                continue
+                
+                you may have to read each indiivudal letter, then when one meets a , or ] you stop. 
+                then you also make count, then restart the count and then set the new seek position for new line
+                
+            else:
+                bool = False
+                break
+            if fo.read(1) == "]}
+                bool = False
+                break
+                i think you need something to signal it being the end, so it stops at "," and at "]"
+                
+        '''
         colonCount = 0
+        print(count)
         n = n - count
         index = index + 1
     count = -1

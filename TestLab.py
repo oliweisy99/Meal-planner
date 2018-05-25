@@ -6,7 +6,6 @@ assign = ""
 bool = True
 #count = 0
 
-
 if check == "[":
     while bool == True:
         notes.seek(n+1)
@@ -14,6 +13,7 @@ if check == "[":
         #foodList[index].tags[count] = notes.read(4)
         n = n + 5
         notes.seek(n)
+        print(assign)
         if notes.read(1) == ",":
             #count = count + 1
             continue

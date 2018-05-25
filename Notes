@@ -1,6 +1,6 @@
 Name:Grams:Calories:Proteins:Carbs:Fats:[Tags]
 Steak:100:150:35:25:15:[BREK,PRIM,TEST]
-Fish:100:125:30:20:10:
-Potato:100:90:10:30:15:
-chips:100:110:20:15:20:
+Fish:100:125:30:20:10:[BREK,PRIM,TEST]
+Potato:100:90:10:30:15:[BREK,PRIM,TEST]
+chips:100:110:20:15:20:[BREK,PRIM,TEST]
 #
