@@ -15,8 +15,9 @@ class food:
 # variables for text file assignments
 foodList = [0] * 50
 index = 0
-n = 47
+n = 48
 i = 1
+x = 1
 nom = None
 count = 0
 colonCount = 0
@@ -30,7 +31,7 @@ bool = True
 
 # text file assignment to class function
 def assign(coCnt):
-    global count, check, nm, end, nom, colonCount, n, index, list, incre, bool
+    global count, check, end, nom, colonCount, n, index, list, x, bool
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -52,42 +53,36 @@ def assign(coCnt):
     if coCnt == 6:
         foodList[index].fats = nom
     if coCnt == 7:
+        print(fo.tell())
+        fo.seek(n-(count-1))
+        print(fo.tell())
+        print(fo.read(4))
+        fo.seek(n-(count - 6))
+        print(fo.tell())
+        print(fo.read(4))
+        fo.seek(n - (count - 11))
+        print(fo.tell())
+        print(fo.read(4))
         '''
         while bool == True:
-            n = n + (count - 3)
-            fo.seek(n+1)
-            print(fo.read(4))
-            foodList[index].tags[incre] = fo.read(4)
-            #print(foodList[index].tags[incre])
-            n = n + 5
-            fo.seek(n)
             if fo.read(1) == ",":
-                incre = incre + 1
-                continue
-                
-                you may have to read each indiivudal letter, then when one meets a , or ] you stop. 
-                then you also make count, then restart the count and then set the new seek position for new line
-                
-            else:
+                fo.seek((n-(count - 5)) + x)
+                print(fo.read(4))
+                x = x + 4
+            if fo.read(1) == "]":
+                fo.seek(n)
+                print("N", n)
                 bool = False
-                break
-            if fo.read(1) == "]}
-                bool = False
-                break
-                i think you need something to signal it being the end, so it stops at "," and at "]"
-                
         '''
+        print("Count", count)
+        print("N", n)
+        print("check", check)
+    if coCnt == 8:
         colonCount = 0
-        print(count)
         n = n - count
         index = index + 1
     count = -1
     check = fo.read(i)
-
-'''
-we want to go inside the brackets and read the word, then assign it to array
-then if there is another one, add it to the next part in the array of the class object
-'''
 
 # text file reader loop
 while end == False:
@@ -142,7 +137,6 @@ for i in range(0,4): # the number 3 needs to be a variable which will be determi
 
 
 '''
-
 print(X[0][0]) ~ first food + cals
 print(X[1][0]) ~ pros
 print(X[2][0]) ~ carbs
@@ -172,8 +166,8 @@ could use multi-threading to speed up the calculation process.
 first step: create tags and add them to a list within the class so they can be accessed.
 next, will be to make meals including the tags
 then to calculate based on tags. 
-
 '''
+
 for i in range(0,4):
     print(multiList[i])
 
