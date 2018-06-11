@@ -17,7 +17,7 @@ foodList = [0] * 50
 index = 0
 n = 48
 i = 1
-x = 1
+x = 0
 nom = None
 count = 0
 colonCount = 0
@@ -53,6 +53,24 @@ def assign(coCnt):
     if coCnt == 6:
         foodList[index].fats = nom
     if coCnt == 7:
+        while bool == True:
+            if count < 4:
+                bool = False
+                break
+            else:
+                while True:
+                    fo.seek((n - (count - 1)) + x)
+                    print(fo.read(4)) # assign equivelant
+                    x = x + 4
+                    fo.seek((n - (count - 1)) + x)
+                    if fo.read(1) == ",":
+                        fo.seek((n - (count - 1)) + x+1)
+                        print(fo.read(4))
+                        x = x + 4
+                        fo.seek((n - (count - 1)) + x)
+                    if fo.read(1) == "]":
+                        break
+
         print(fo.tell())
         fo.seek(n-(count-1))
         print(fo.tell())
@@ -99,6 +117,17 @@ while end == False:
     check = fo.read(count)
     fo.seek(n + 1, 0)
     assign(colonCount)
+
+'''
+maybe think about simplifying the whole system with a database. you are doing this long term remember?
+would it not be more beneficial to gain more skills and have a killer program rather
+than just finding some quick easy short term solution
+if you really do want to do this for the next 5 - 10 years, you should make sure your programming skills
+and this program works really well and is easy to use
+you should also want to develop key skills, so if this takes longer, then fine, but will be worth it
+as you will be able to do more with those skills
+
+'''
 
 fo.close()
 
