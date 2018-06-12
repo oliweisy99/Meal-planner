@@ -20,6 +20,7 @@ i = 1
 x = 0
 z = 0
 nom = None
+tester = None
 count = 0
 colonCount = 0
 end = False
@@ -32,7 +33,7 @@ bool = True
 
 # text file assignment to class function
 def assign(coCnt):
-    global count, check, end, nom, colonCount, n, index, list, x, bool, z
+    global count, check, end, nom, colonCount, n, index, list, x, bool, z, tester
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -56,7 +57,8 @@ def assign(coCnt):
     if coCnt == 7:
         x = 0
         fo.seek((n - (count - 1))) # read from first letter
-        print(fo.read(4))
+        tester = fo.read(4)
+        print(tester)
         #foodList[index].tags[z] = str(fo.read(4))
         x = x + 4
         fo.seek((n - (count - 1)) + x)  # starts from ',' or ']'
@@ -64,12 +66,18 @@ def assign(coCnt):
             if fo.read(1) == ",":
                 fo.seek((n - (count - 1)) + (x+1)) # read from first letter after ','
                 z = z + 1
-                print(fo.read(4))
+                tester = fo.read(4)
+                print(tester)
+                print("tell", fo.tell())
                 #foodList[index].tags[z] = str(fo.read(4))
                 x = x + 5
+                print("x=",x)
+                print("count=", count)
+                print("n=", n)
                 fo.seek((n - (count - 1)) + x)
+                print("tell", fo.tell())
             if fo.read(1) == "]":
-                print("test,=",fo.read(1))
+                print("test")
                 x = 0
                 z = 0
                 fo.seek(n+1)
