@@ -118,8 +118,22 @@ and this program works really well and is easy to use
 you should also want to develop key skills, so if this takes longer, then fine, but will be worth it
 as you will be able to do more with those skills
 
+the data base would actually over complicate it, so no point.
 
-the data base would actually over complicate it, so no point. 
+it may be worth learning how to use excel spreadsheets. 
+just thinking about the advantages over disadvantages to doing so 
+all it would be used for it assigning values to class 
+actually, it could change the whole algorithm for organising meals
+if you have each tag as a column or key or whatever you want to call it
+then you could go through columns, find matching foods, then it could be easier than going through
+all the arrays of each food. it would also be easier to organise
+it would also be easier to add in new features and data for each food
+the disadvantage would be it is hard to learn
+it may just be a waste in time in learning if we could just sort this out with the files
+the only reason not to would be because it takes time.
+it logically makes sense to learn how to use excel spreadsheets with python
+it makes logical sense for future needs as well. 
+will also make it easier to track customers into spreadsheet
 
 '''
 
