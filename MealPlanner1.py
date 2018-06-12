@@ -61,7 +61,6 @@ def assign(coCnt):
         x = x + 4
         fo.seek((n - (count - 1)) + x)  # starts from ',' or ']'
         while bool == True:
-
             if fo.read(1) == ",":
                 fo.seek((n - (count - 1)) + (x+1)) # read from first letter after ','
                 z = z + 1
@@ -70,6 +69,7 @@ def assign(coCnt):
                 x = x + 5
                 fo.seek((n - (count - 1)) + x)
             if fo.read(1) == "]":
+                print("test,=",fo.read(1))
                 x = 0
                 z = 0
                 fo.seek(n+1)
@@ -94,8 +94,6 @@ while end == False:
             n = n + 1
             count = count + 1
             fo.seek(n,0)
-    print("Count=", count)
-    print("n=", n)
     fo.seek(n - count, 0)
     check = fo.read(count)
     print("check=", check)
