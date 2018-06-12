@@ -18,6 +18,7 @@ index = 0
 n = 48
 i = 1
 x = 0
+z = 0
 nom = None
 count = 0
 colonCount = 0
@@ -31,7 +32,7 @@ bool = True
 
 # text file assignment to class function
 def assign(coCnt):
-    global count, check, end, nom, colonCount, n, index, list, x, bool
+    global count, check, end, nom, colonCount, n, index, list, x, bool, z
     if isinstance(check, str) == True :
         nom = str(check)
     else:
@@ -53,48 +54,28 @@ def assign(coCnt):
     if coCnt == 6:
         foodList[index].fats = nom
     if coCnt == 7:
+        x = 0
+        fo.seek((n - (count - 1))) # read from first letter
+        print(fo.read(4))
+        #foodList[index].tags[z] = str(fo.read(4))
+        x = x + 4
+        fo.seek((n - (count - 1)) + x)  # starts from ',' or ']'
         while bool == True:
-            if count < 4:
+
+            if fo.read(1) == ",":
+                fo.seek((n - (count - 1)) + (x+1)) # read from first letter after ','
+                z = z + 1
+                print(fo.read(4))
+                #foodList[index].tags[z] = str(fo.read(4))
+                x = x + 5
+                fo.seek((n - (count - 1)) + x)
+            if fo.read(1) == "]":
+                x = 0
+                z = 0
+                fo.seek(n+1)
                 bool = False
                 break
-            else:
-                while True:
-                    fo.seek((n - (count - 1)) + x)
-                    print(fo.read(4)) # assign equivelant
-                    x = x + 4
-                    fo.seek((n - (count - 1)) + x)
-                    if fo.read(1) == ",":
-                        fo.seek((n - (count - 1)) + x+1)
-                        print(fo.read(4))
-                        x = x + 4
-                        fo.seek((n - (count - 1)) + x)
-                    if fo.read(1) == "]":
-                        break
-
-        print(fo.tell())
-        fo.seek(n-(count-1))
-        print(fo.tell())
-        print(fo.read(4))
-        fo.seek(n-(count - 6))
-        print(fo.tell())
-        print(fo.read(4))
-        fo.seek(n - (count - 11))
-        print(fo.tell())
-        print(fo.read(4))
-        '''
-        while bool == True:
-            if fo.read(1) == ",":
-                fo.seek((n-(count - 5)) + x)
-                print(fo.read(4))
-                x = x + 4
-            if fo.read(1) == "]":
-                fo.seek(n)
-                print("N", n)
-                bool = False
-        '''
-        print("Count", count)
-        print("N", n)
-        print("check", check)
+        bool = True
     if coCnt == 8:
         colonCount = 0
         n = n - count
@@ -113,9 +94,13 @@ while end == False:
             n = n + 1
             count = count + 1
             fo.seek(n,0)
+    print("Count=", count)
+    print("n=", n)
     fo.seek(n - count, 0)
     check = fo.read(count)
+    print("check=", check)
     fo.seek(n + 1, 0)
+    print("CoCnt=", colonCount)
     assign(colonCount)
 
 '''
@@ -126,6 +111,9 @@ if you really do want to do this for the next 5 - 10 years, you should make sure
 and this program works really well and is easy to use
 you should also want to develop key skills, so if this takes longer, then fine, but will be worth it
 as you will be able to do more with those skills
+
+
+the data base would actually over complicate it, so no point. 
 
 '''
 
