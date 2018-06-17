@@ -9,15 +9,16 @@ db = pymysql.connect("localhost","testuser","test123","TESTDB" )
 cursor = db.cursor()
 
 # Drop table if it already exist using execute() method.
-cursor.execute("DROP TABLE IF EXISTS EMPLOYEE")
+cursor.execute("DROP TABLE IF EXISTS FOOD")
 
 # Create table as per requirement
-sql = """CREATE TABLE EMPLOYEE (
-         FIRST_NAME  CHAR(20) NOT NULL,
-         LAST_NAME  CHAR(20),
-         AGE INT,  
-         SEX CHAR(1),
-         INCOME FLOAT )"""
+sql = """CREATE TABLE FOOD (
+         NAME  CHAR(20) NOT NULL,
+         GRAMS  INT NOT NULL,
+         CALS INT NOT NULL,  
+         PROS INT NOT NULL,
+         CARBS INT NOT NULL, 
+         FATS INT NOT NULL)"""
 
 cursor.execute(sql)
 

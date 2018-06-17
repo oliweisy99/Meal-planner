@@ -14,17 +14,17 @@ cursor = database.cursor()
 
 # Create a For loop to iterate through each row in the XLS file, starting at row 2 to skip the headers
 for r in range(1, sheet.nrows):
-    firstName = sheet.cell(r,0).value
-    lastName = sheet.cell(r,1).value
-    age	= sheet.cell(r,2).value
-    sex	= sheet.cell(r,3).value
-    income	= sheet.cell(r,4).value
+    name = sheet.cell(r,0).value
+    grams = sheet.cell(r,1).value
+    cals = sheet.cell(r,2).value
+    pros = sheet.cell(r,3).value
+    carbs = sheet.cell(r,4).value
+    fats = sheet.cell(r, 5).value
 
-    sql = "INSERT INTO EMPLOYEE(FIRST_NAME, \
-           LAST_NAME, AGE, SEX, INCOME) \
-           VALUES ('%s', '%s', '%d', '%c', '%d' )" % \
-          (firstName, lastName, age, sex, income)
-    # %s means string, %d means digit, %c means character
+    sql = "INSERT INTO FOOD(NAME, GRAMS, \
+           CALS, PROS, CARBS, FATS) \
+           VALUES ('%s', '%d', '%d', '%d', '%d', '%d' )" % \
+          (name, grams, cals, pros, carbs, fats)
 
     try:
         # Execute the SQL command
@@ -33,7 +33,6 @@ for r in range(1, sheet.nrows):
         database.commit()
     except:
         # Rollback in case there is any error
-        print("penis")
         database.rollback()
 
 # Close the cursor
@@ -46,9 +45,6 @@ database.commit()
 database.close()
 
 # Print results
-print("")
-print("All Done! Bye, for now.")
-print("")
 columns = str(sheet.ncols)
 rows = str(sheet.nrows)
 print("I just imported ", columns, " columns and ", rows," rows to MySQL!")
