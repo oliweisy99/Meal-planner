@@ -13,11 +13,11 @@ cursor = db.cursor()
  #               (FIRST_NAME,LAST_NAME, AGE, SEX, INCOME)
   #  VALUES      ('Mac', 'Mohan', 20, 'M', 2000)"""
 
-test = "penis"
+test = "levelup"
 sql = "INSERT INTO EMPLOYEE(FIRST_NAME, \
        LAST_NAME, AGE, SEX, INCOME) \
        VALUES ('%s', '%s', '%d', '%c', '%d' )" % \
-       (test, 'awesome', 4, 'F', 1000)
+       (test, 'message', 37, 'X', 1201)
 # %s means string, %d means digit, %c means character
 
 try:
