@@ -11,7 +11,6 @@ database = pymysql.connect("localhost","testuser","test123","TESTDB" )
 # Get the cursor, which is used to traverse the database, line by line
 cursor = database.cursor()
 
-
 # Create a For loop to iterate through each row in the XLS file, starting at row 2 to skip the headers
 for r in range(1, sheet.nrows):
     name = sheet.cell(r,0).value
@@ -20,20 +19,23 @@ for r in range(1, sheet.nrows):
     pros = sheet.cell(r,3).value
     carbs = sheet.cell(r,4).value
     fats = sheet.cell(r, 5).value
+    id = sheet.cell(r, 6).value
 
     sql = "INSERT INTO FOOD(NAME, GRAMS, \
-           CALS, PROS, CARBS, FATS) \
-           VALUES ('%s', '%d', '%d', '%d', '%d', '%d' )" % \
-          (name, grams, cals, pros, carbs, fats)
+           CALS, PROS, CARBS, FATS, ID) \
+           VALUES ('%s', '%d', '%d', '%d', '%d', '%d', '%s' )" % \
+          (name, grams, cals, pros, carbs, fats, id)
 
     try:
         # Execute the SQL command
         cursor.execute(sql)
         # Commit your changes in the database
         database.commit()
+
     except:
         # Rollback in case there is any error
         database.rollback()
+        print("Error, try again")
 
 # Close the cursor
 cursor.close()
@@ -44,7 +46,7 @@ database.commit()
 # Close the database connection
 database.close()
 
-# Print results
 columns = str(sheet.ncols)
 rows = str(sheet.nrows)
-print("I just imported ", columns, " columns and ", rows," rows to MySQL!")
+print("I just imported ", columns, " columns and ", rows, " rows to MySQL!")
+

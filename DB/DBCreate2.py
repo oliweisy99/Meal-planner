@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import pymysql
 
 # Open database connection
@@ -9,17 +7,20 @@ db = pymysql.connect("localhost","testuser","test123","TESTDB" )
 cursor = db.cursor()
 
 # Drop table if it already exist using execute() method.
-cursor.execute("DROP TABLE IF EXISTS FOOD")
+cursor.execute("DROP TABLE IF EXISTS TAGS")
 
 # Create table as per requirement
-sql = """CREATE TABLE FOOD (
-         NAME  CHAR(20) NOT NULL,
-         GRAMS  INT NOT NULL,
-         CALS INT NOT NULL,  
-         PROS INT NOT NULL,
-         CARBS INT NOT NULL, 
-         FATS INT NOT NULL,
-         ID CHAR(8) NOT NULL)"""
+sql = """CREATE TABLE TAGS (
+         BREK  CHAR(8),
+         LNCH  CHAR(8),
+         DINR  CHAR(8),
+         PRIM  CHAR(8),
+         SIDE  CHAR(8),
+         HCRB  CHAR(8),
+         HPRO  CHAR(8),
+         HFAT  CHAR(8),
+         LCRB  CHAR(8),
+         VEGY CHAR(8))"""
 
 cursor.execute(sql)
 
