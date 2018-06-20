@@ -2,8 +2,8 @@ import xlrd
 import pymysql
 
 # Open the workbook and define the worksheet
-book = xlrd.open_workbook("/Users/OliverWeisfeld/Desktop/code/Practise1.xls")
-sheet = book.sheet_by_name("Practise1")
+book = xlrd.open_workbook("/Users/OliverWeisfeld/Desktop/code/FoodDetails.xls")
+sheet = book.sheet_by_name("Food")
 
 # Establish a MySQL connection
 database = pymysql.connect("localhost","testuser","test123","TESTDB" )
@@ -19,12 +19,13 @@ for r in range(1, sheet.nrows):
     pros = sheet.cell(r,3).value
     carbs = sheet.cell(r,4).value
     fats = sheet.cell(r, 5).value
-    id = sheet.cell(r, 6).value
+    price = sheet.cell(r, 6).value
+    id = sheet.cell(r, 7).value
 
     sql = "INSERT INTO FOOD(NAME, GRAMS, \
-           CALS, PROS, CARBS, FATS, ID) \
-           VALUES ('%s', '%d', '%d', '%d', '%d', '%d', '%s' )" % \
-          (name, grams, cals, pros, carbs, fats, id)
+           CALS, PROS, CARBS, FATS, PRICE, ID) \
+           VALUES ('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%s' )" % \
+          (name, grams, cals, pros, carbs, fats, price, id)
 
     try:
         # Execute the SQL command

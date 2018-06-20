@@ -19,6 +19,7 @@ sql = """CREATE TABLE FOOD (
          PROS INT NOT NULL,
          CARBS INT NOT NULL, 
          FATS INT NOT NULL,
+         PRICE FLOAT NOT NULL,
          ID CHAR(8) NOT NULL)"""
 
 cursor.execute(sql)
