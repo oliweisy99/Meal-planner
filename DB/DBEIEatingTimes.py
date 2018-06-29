@@ -3,7 +3,7 @@ import pymysql
 
 # Open the workbook and define the worksheet
 book = xlrd.open_workbook("/Users/OliverWeisfeld/Desktop/code/FoodDetails.xls")
-sheet = book.sheet_by_name("Food")
+sheet = book.sheet_by_name("EatingTimes")
 
 # Establish a MySQL connection
 database = pymysql.connect("localhost","testuser","test123","TESTDB" )
@@ -13,19 +13,15 @@ cursor = database.cursor()
 
 # Create a For loop to iterate through each row in the XLS file, starting at row 2 to skip the headers
 for r in range(1, sheet.nrows):
-    name = sheet.cell(r,0).value
-    grams = sheet.cell(r,1).value
-    cals = sheet.cell(r,2).value
-    pros = sheet.cell(r,3).value
-    carbs = sheet.cell(r,4).value
-    fats = sheet.cell(r, 5).value
-    price = sheet.cell(r, 6).value
-    id = sheet.cell(r, 7).value
+    breakfast = sheet.cell(r,0).value
+    lunch = sheet.cell(r,1).value
+    dinner = sheet.cell(r,2).value
+    snack = sheet.cell(r,3).value
 
-    sql = "INSERT INTO FOOD(NAME, GRAMS, \
-           CALS, PROS, CARBS, FATS, PRICE, ID) \
-           VALUES ('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%s' )" % \
-          (name, grams, cals, pros, carbs, fats, price, id)
+    sql = "INSERT INTO EATINGTIMES(BREK, LNCH, \
+           DINR, SNCK) \
+           VALUES ('%s', '%s', '%s', '%s')" % \
+          (breakfast, lunch, dinner, snack)
 
     try:
         # Execute the SQL command

@@ -14,7 +14,6 @@ cursor.execute("DROP TABLE IF EXISTS FOOD")
 # Create table as per requirement
 sql = """CREATE TABLE FOOD (
          NAME  CHAR(20) NOT NULL,
-         GRAMS  INT NOT NULL,
          CALS INT NOT NULL,  
          PROS INT NOT NULL,
          CARBS INT NOT NULL, 

@@ -109,33 +109,6 @@ while end == False:
     print("CoCnt=", colonCount)
     assign(colonCount)
 
-'''
-maybe think about simplifying the whole system with a database. you are doing this long term remember?
-would it not be more beneficial to gain more skills and have a killer program rather
-than just finding some quick easy short term solution
-if you really do want to do this for the next 5 - 10 years, you should make sure your programming skills
-and this program works really well and is easy to use
-you should also want to develop key skills, so if this takes longer, then fine, but will be worth it
-as you will be able to do more with those skills
-
-the data base would actually over complicate it, so no point.
-
-it may be worth learning how to use excel spreadsheets. 
-just thinking about the advantages over disadvantages to doing so 
-all it would be used for it assigning values to class 
-actually, it could change the whole algorithm for organising meals
-if you have each tag as a column or key or whatever you want to call it
-then you could go through columns, find matching foods, then it could be easier than going through
-all the arrays of each food. it would also be easier to organise
-it would also be easier to add in new features and data for each food
-the disadvantage would be it is hard to learn
-it may just be a waste in time in learning if we could just sort this out with the files
-the only reason not to would be because it takes time.
-it logically makes sense to learn how to use excel spreadsheets with python
-it makes logical sense for future needs as well. 
-will also make it easier to track customers into spreadsheet
-
-'''
 
 fo.close()
 
@@ -179,30 +152,6 @@ print(X[1][0]) ~ pros
 print(X[2][0]) ~ carbs
 print(X[3][0]) ~ fats
 print(X[0][1]) ~ next food + cals
-
-forget all about below
-what are we trying to accomplish?
-calculate with multiple foods to reach requirements
-the whole program made was to test for 3 foods.
-we need to create one which is going to be for multiple foods
-
-lets start with calling tags then add in more requirements 
-then workout procedures or functions to make meals
-how it could work:
-call loops every food with tag X
-then add numbers (0.1)s for every food - could be an Array just filled with (0.1)s that reset or are used in algorithm
-
-create three different meals: Breakfast, lunch and dinner
-for each one you, want to split requirements through each one, then when calculations are made, it re-evaluates it to get as close as possible
-or compares across all of them and gets as close as possible for each meal using top 5 closest for each meal then and calculations to get as close as possible
-each one is an individual meal calculated, then when it is finished, it moves on to the next set.
-you could then have input from the user to decide what needs to be made: lunch, dinner, breakfast, snacks, gluten free etc. and
-essentially they act as tags 
-could use multi-threading to speed up the calculation process. 
-
-first step: create tags and add them to a list within the class so they can be accessed.
-next, will be to make meals including the tags
-then to calculate based on tags. 
 '''
 
 for i in range(0,4):
@@ -273,43 +222,8 @@ for index in range(1,6):
 
 all this is initially for yourself, then when you have it working the way you want, start adding customers
 
-
-- make the code better and more accurate to get results faster: 
-procedures, multi threading, 0.001, using less variables, making code more efficient, cutting down calculations etc.
-it needs to be quick if you want to create loads of different unique meals for a week, and in the future for a month 
-and also to be able to completely create and calculate a new meal plan if and when the user changes foods 
-
-- make sure it works with multiple amounts of foods to create actual meals, so have lots of foods and 
-make 3 different meals based on the foods to get really close amounts. 
-
-- have it so it displays the amount of each food that is needed to get close to requirements
-# we can have variables for each food [PRIM, MEAT, SOIL, TAST, SIDE, SUCE, PROT, SAND, CERL  ETC.]
-# PRIM = primary food, made for dinners / main courses 
-# SIDE = side dish that go with PRIMs
-# BREK = breakfast
-# LNCH = lunch
-# DINR = dinner
-# PRTN = protein 
-# HCRB = high carbohydrates
-# CERL = cereal
-# SWCH = sandwich
-# BRED = bread
-# MEAT = meat
-things which have lots of different types or variations
-e.g. different types of meats, different ingredients in cereal, different styles of bread
-all of which will have different price ranges so can fit customers requirements
-so some peices of meat or bread will be cheaper and lower quality, and some will be more expensive but higher quality
-and algorithm just swaps and changes lower to higher quality ingredients, then chef makes it look nice
-but there will also be different meals, e.g. salads, sandwiches, main courses, sides, soups, snacks etc. 
-etc.
-
-start making good meals based on variations and categories etc so all is needed is just switching of foods into 
-different meals - sandwiches, salads, meat meals, cereals etc.
-do research into making good meals, types of meals etc.
-once you have the code to generate the best variations, now you can start making meals based on requirements such as 
-price, needs, aims and start adding in foods from websites to get it done. 
-then you can start adding more features whilst learning website development 
-then you start getting the business side of it sorted so meals can be shopped, made and delivered
-
+Research into:
+- making high quality meals 
+- multithreading for faster programming
 '''
 
